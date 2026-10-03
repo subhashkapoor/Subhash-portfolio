@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Subhash Kapoor, Design Manager and Product Design Leader. Portfolio.">
+<style>html{color-scheme:light}body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style>
+<title>Subhash Kapoor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+<header class="top">
+  <a class="mark" href="#top" aria-label="Back to top">SK</a>
+  <nav class="pill" aria-label="Sections">
+    <a href="#about" data-s="about">About</a>
+    <a href="#skills" data-s="skills">Skills</a>
+    <a href="#work" data-s="work">Work</a>
+    <a href="#experience" data-s="experience">Experience</a>
+    <a href="#moments" data-s="moments">Moments</a>
+    <a href="#contact" data-s="contact">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero" aria-label="Introduction">
+    <div class="ghost" id="ghost" aria-hidden="true">SUBHASH</div>
+    <div class="person" id="person">
+      <img src="img/subhash-3d.webp" alt="3D cartoon of Subhash Kapoor in a cognac blazer" width="384" height="840">
+      <canvas id="stage" width="512" height="1120" role="img" aria-label="Animated 3D cartoon of Subhash Kapoor introducing himself"></canvas>
+      <video id="vid" src="media/hero.mp4" muted playsinline preload="auto"></video>
+    </div>
+    <button class="sound" id="sound" type="button" hidden aria-label="Play with sound">
+      <i><svg viewBox="0 0 16 16" fill="currentColor"><path d="M2 6h3l4-3v10L5 10H2z"/><path d="M11.5 5.5a3.5 3.5 0 0 1 0 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></i><span>Hear me say hi</span>
+    </button>
+    <div class="wrap hero-copy">
+      <div>
+        <div class="eyebrow"><b>Design Manager</b> 15+ years</div>
+        <h1>Product Design<br><em>Leader.</em></h1>
+        <p class="tag">Users first mindset. Product-focused. Design-led, always.</p>
+      </div>
+      <div class="hero-side">
+        <a class="btn dark" href="#work">See the work
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <div class="meta">NOW AT <strong>PUBLICIS SAPIENT</strong><br>LEADING UX ACROSS <strong>ANZ</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="wrap about-grid">
+      <div class="rv">
+        <div class="eyebrow"><b>01</b> About</div>
+        <h2>Hi, I'm <em>Subhash.</em></h2>
+        <p class="lead">I'm a <strong>Design Manager and Product Design Leader</strong> who builds and scales design teams, shapes end-to-end product experiences and grows strong design cultures across e-commerce, fintech, AI, SaaS and healthcare.</p>
+        <p class="sub">At Publicis Sapient, AlphaSense, Mphasis and Quovantis I've run full product lifecycles, from user research, wireframes and prototypes to final visual delivery. I align business goals with user needs, set up design systems that scale, and ship measurable outcomes inside Agile teams.</p>
+        <div class="row">
+          <a class="btn dark" href="#contact">Get in touch
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a class="btn" href="#experience">Career path</a>
+        </div>
+      </div>
+
+      <div class="lanyard rv" aria-label="Designer ID card">
+        <div class="swing">
+          <div style="display:flex;flex-direction:column;align-items:center">
+            <div class="strap"><span>DESIGN-LED · ALWAYS</span></div>
+            <div class="clip"></div>
+          </div>
+          <div class="idcard" id="idcard">
+            <div class="id-top">
+              <div class="logo">SK</div>
+              <div><b>DESIGNER ID</b><small>PRODUCT DESIGN · EST. 2010</small></div>
+            </div>
+            <div class="id-body">
+              <div class="id-photo"><img src="img/headshot.jpg" alt="Headshot of Subhash Kapoor" width="400" height="500"></div>
+              <div class="id-name">SUBHASH KAPOOR</div>
+              <div class="id-role">Design Manager</div>
+              <dl class="id-fields">
+                <div><dt>ID no.</dt><dd>SK-2010</dd></div>
+                <div><dt>Team</dt><dd>2 → 40+</dd></div>
+                <div><dt>Clearance</dt><dd>UX Lead</dd></div>
+              </dl>
+              <div class="barcode" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="facts-col rv">
+        <div class="facts">
+          <h3>Quick facts</h3>
+          <div class="fact"><span>Currently</span><span>UX Manager, Publicis Sapient</span></div>
+          <div class="fact"><span>Experience</span><span>15+ years</span></div>
+          <div class="fact"><span>Trained at</span><span>Product Design, IIT Mumbai</span></div>
+          <div class="fact"><span>Markets</span><span>ANZ · Singapore · Europe</span></div>
+          <div class="fact"><span>Domains</span><span>E-com · Fintech · AI · SaaS · Health</span></div>
+        </div>
+        <p class="quote">"Start with the user, finish with the numbers."<small>How I run a design team</small></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="eyebrow"><b>02</b> Skills</div>
+          <h2 class="h2" style="margin-top:20px">The periodic table <em>of my craft.</em></h2>
+        </div>
+        <p>Every element I bring to a product team. Filter by group, or hover an element to read how I use it.</p>
+      </div>
+      <div class="chips rv" role="group" aria-label="Filter skills">
+        <button class="chip" data-g="all" aria-pressed="true">All</button>
+        <button class="chip" data-g="research" aria-pressed="false"><i></i>Research</button>
+        <button class="chip" data-g="craft" aria-pressed="false"><i></i>Craft</button>
+        <button class="chip" data-g="lead" aria-pressed="false"><i></i>Leadership</button>
+        <button class="chip" data-g="tools" aria-pressed="false"><i></i>Tools & process</button>
+        <button class="chip" data-g="ai" aria-pressed="false"><i></i>AI</button>
+      </div>
+      <div class="ptable-wrap rv">
+        <div class="ptable" id="ptable"></div>
+        <aside class="detail" id="detail" aria-live="polite">
+          <div class="big" id="dBig"><small id="dN">01</small><b id="dS">Ur</b></div>
+          <div>
+            <h3 id="dName">User Research</h3>
+            <div class="grp" id="dGrp">Research</div>
+            <p id="dText">Interviews, contextual inquiry and synthesis that turn into roadmaps. My research at AlphaSense led to 3 major feature launches.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="eyebrow"><b>03</b> Selected work</div>
+          <h2 class="h2" style="margin-top:20px">Things I've <em>shipped.</em></h2>
+        </div>
+        <p>Four programmes, four industries. Each one measured after launch.</p>
+      </div>
+      <div class="work-list rv" id="work-list">
+
+        <article class="case open" tabindex="0" data-pct="4" data-max="10">
+          <div class="spine"><span class="no">01</span><span>Luxury e-commerce</span><span class="plus">+</span></div>
+          <div class="inner">
+            <div>
+              <div class="co">Publicis Sapient · 2023–now</div>
+              <h3>Luxury e-commerce, ANZ</h3>
+              <p class="desc">UX lead for a luxury retail, AI and travel portfolio across Australia and New Zealand. UX optimisation and a shared design system lifted sales year on year.</p>
+              <ul><li>+4% client sales, every year</li><li>Design system rolled out across brands</li><li>Requirement workshops with ANZ stakeholders</li></ul>
+              <div class="tags"><span>E-COMMERCE</span><span>DESIGN SYSTEMS</span><span>CRO</span></div>
+            </div>
+            <div class="stage">
+              <div class="mock"><div class="bar"><i></i><i></i><i></i></div>
+                <div class="pad prod">
+                  <div class="img"></div>
+                  <div><b style="font-size:13px">Cognac Wool Blazer</b><div class="ln" style="width:70%"></div><div class="ln" style="width:50%"></div>
+                    <div class="lift">▲ 4% YoY</div><div class="buy">Add to bag</div></div>
+                </div></div>
+              <div class="dial"><svg viewBox="0 0 80 80"><circle class="tr" cx="40" cy="40" r="34"/><circle class="vl" cx="40" cy="40" r="34"/></svg><div><b>+4%</b><small>sales YoY</small></div></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="case" tabindex="0" data-pct="30" data-max="100">
+          <div class="spine"><span class="no">02</span><span>AI intelligence platform</span><span class="plus">+</span></div>
+          <div class="inner">
+            <div>
+              <div class="co">Publicis Sapient · Enterprise AI</div>
+              <h3>AI intelligence platform</h3>
+              <p class="desc">Led the design of an AI platform that helps enterprise clients get to decisions faster. Design-thinking workshops surfaced 20+ use cases and set the roadmap.</p>
+              <ul><li>Decision workflows 30% faster</li><li>20+ actionable use cases identified</li><li>Success metrics defined per release</li></ul>
+              <div class="tags"><span>AI IN UX</span><span>WORKSHOPS</span><span>ENTERPRISE</span></div>
+            </div>
+            <div class="stage">
+              <div class="mock"><div class="bar"><i></i><i></i><i></i></div>
+                <div class="pad"><div class="ai-q">Which markets slowed in Q3?</div>
+                  <div class="ai-a"><b>3 markets below forecast</b><div class="bars"><i style="height:80%"></i><i style="height:62%"></i><i style="height:90%"></i><i style="height:38%"></i><i style="height:44%"></i><i style="height:70%"></i></div></div></div></div>
+              <div class="dial"><svg viewBox="0 0 80 80"><circle class="tr" cx="40" cy="40" r="34"/><circle class="vl" cx="40" cy="40" r="34"/></svg><div><b>30%</b><small>faster</small></div></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="case" tabindex="0" data-pct="40" data-max="100">
+          <div class="spine"><span class="no">03</span><span>Orion design system</span><span class="plus">+</span></div>
+          <div class="inner">
+            <div>
+              <div class="co">AlphaSense (Sentieo) · 2021–2023</div>
+              <h3>Orion design system</h3>
+              <p class="desc">Created and scaled Orion, the design system behind AlphaSense's research platform. Shared tokens and components cut the back-and-forth between design and engineering.</p>
+              <ul><li>40% fewer design–dev iterations</li><li>3 major features launched from research</li><li>15% lift in retention</li></ul>
+              <div class="tags"><span>DESIGN SYSTEMS</span><span>FINTECH</span><span>RESEARCH</span></div>
+            </div>
+            <div class="stage">
+              <div class="mock"><div class="bar"><i></i><i></i><i></i></div>
+                <div class="pad"><b style="font-size:12px">Orion / Tokens</b>
+                  <div class="tok" style="margin-top:10px"><i style="background:#1A1F31"></i><i style="background:#3D4C7A"></i><i style="background:#9C5F33"></i><i style="background:#D9C7AE"></i><i style="background:#ECE6DA;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)"></i></div>
+                  <div class="cmp"><span class="p">Primary</span><span>Secondary</span><span>Ghost</span></div>
+                  <div class="ln" style="width:90%;margin-top:12px"></div><div class="ln" style="width:60%"></div></div></div>
+              <div class="dial"><svg viewBox="0 0 80 80"><circle class="tr" cx="40" cy="40" r="34"/><circle class="vl" cx="40" cy="40" r="34"/></svg><div><b>−40%</b><small>iterations</small></div></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="case" tabindex="0" data-pct="80" data-max="100">
+          <div class="spine"><span class="no">04</span><span>FedEx customs clearance</span><span class="plus">+</span></div>
+          <div class="inner">
+            <div>
+              <div class="co">Mphasis for FedEx · 2019–2021</div>
+              <h3>FedEx customs clearance</h3>
+              <p class="desc">As senior information architect I worked with every user persona to find what was broken in customs clearance, then ran bunker sessions, clickable prototypes and usability tests.</p>
+              <ul><li>Task completion improved for 80% of users</li><li>"Best Enterprise Solution" award from FedEx</li><li>Validated through rounds of usability testing</li></ul>
+              <div class="tags"><span>LOGISTICS</span><span>INFORMATION ARCHITECTURE</span><span>USABILITY</span></div>
+            </div>
+            <div class="stage">
+              <div class="mock"><div class="bar"><i></i><i></i><i></i></div>
+                <div class="pad"><div class="steps"><i class="d"></i><i class="d"></i><i class="d"></i><i></i></div>
+                  <div class="field"><span>HS code</span><b>8471.30</b></div>
+                  <div class="field"><span>Declared value</span><b>$1,240</b></div>
+                  <div class="field"><span>Status</span><span class="ok">● Cleared</span></div></div></div>
+              <div class="dial"><svg viewBox="0 0 80 80"><circle class="tr" cx="40" cy="40" r="34"/><circle class="vl" cx="40" cy="40" r="34"/></svg><div><b>80%</b><small>of users</small></div></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="rv">
+        <div class="eyebrow"><b>04</b> Experience</div>
+        <h2 class="h2" style="margin-top:20px">Fifteen years of <em>leading design.</em></h2>
+      </div>
+      <div class="tl" id="tl">
+        <div class="tl-fill" id="tlFill"></div>
+        <div class="job rv">
+          <div class="yr">2023<small>MAY 2023 – PRESENT</small></div>
+          <div class="job-body"><span class="badge">Current</span>
+            <h3>UX Manager <span class="at">at Publicis Sapient</span></h3>
+            <ul><li>Lead UX for a luxury e-commerce, AI and travel portfolio across ANZ markets.</li><li>Grew client sales 4% a year through UX strategy and design system work.</li><li>Led design of an AI intelligence platform that sped up decision workflows by 30%.</li><li>Ran design-thinking workshops that produced 20+ use cases and measurable roadmaps.</li></ul></div>
+        </div>
+        <div class="job rv">
+          <div class="yr">2021<small>APR 2021 – MAY 2023</small></div>
+          <div class="job-body"><span class="badge">Design Manager</span>
+            <h3>Design Manager <span class="at">at AlphaSense (Sentieo)</span></h3>
+            <ul><li>Directed end-to-end projects from discovery to launch.</li><li>Built the Orion design system, cutting design–dev iterations by 40%.</li><li>Mentored 10+ designers from junior to mid-level.</li><li>Research that led to 3 feature launches and a 15% increase in retention.</li></ul></div>
+        </div>
+        <div class="job rv">
+          <div class="yr">2019<small>JAN 2019 – MAR 2021</small></div>
+          <div class="job-body"><span class="badge">Manager</span>
+            <h3>Information Architect <span class="at">at Mphasis</span></h3>
+            <ul><li>Led UX/UI for FedEx's customs clearance system: research, design thinking and usability testing.</li><li>Improved task completion time for 80% of users with validated flows.</li></ul></div>
+        </div>
+        <div class="job rv">
+          <div class="yr">2010<small>NOV 2010 – SEP 2018</small></div>
+          <div class="job-body"><span class="badge">Practice Head</span>
+            <h3>Creative Director <span class="at">at Quovantis Technologies</span></h3>
+            <ul><li>Scaled the design team from 2 to 40+ as Practice Head.</li><li>Set UX strategy roadmaps, design ops, tools and methods for global clients.</li><li>Worked directly with founders across healthcare, ed-tech and fintech.</li></ul></div>
+        </div>
+      </div>
+
+      <div class="learn">
+        <div class="rv">
+          <div class="eyebrow"><b>05</b> Education</div>
+          <h2 class="h2" style="margin-top:20px">Always <em>learning.</em></h2>
+          <p class="sub" style="margin-top:20px">A design foundation from IIT Mumbai, backed by business and technology degrees and ongoing study in research and typography.</p>
+        </div>
+        <div class="stack rv">
+          <div class="cert"><div><b>Product Designing</b><small>IIT Mumbai</small></div><span class="k">Degree</span></div>
+          <div class="cert"><div><b>MBA in Information Technology</b><small>Postgraduate</small></div><span class="k">Degree</span></div>
+          <div class="cert"><div><b>B.Sc. in Information Technology</b><small>Undergraduate</small></div><span class="k">Degree</span></div>
+          <div class="cert"><div><b>Importance of Typography in Product</b><small>Certification</small></div><span class="k">Cert</span></div>
+          <div class="cert"><div><b>User Research from Scratch</b><small>Certification</small></div><span class="k">Cert</span></div>
+          <div class="cert"><div><b>Design Thinking Workshop</b><small>Certification</small></div><span class="k">Cert</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROUD MOMENTS -->
+  <section id="moments">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="eyebrow"><b>06</b> Proud moments</div>
+          <h2 class="h2" style="margin-top:20px">Numbers I'm <em>proud of.</em></h2>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat ink wide rv">
+          <span class="lbl">Team built at Quovantis</span>
+          <div class="ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 4a3 3 0 0 1 0 6M21 20c0-2.6-1.6-4.8-4-5.6"/></svg></div>
+          <div><div class="num"><span data-count="40">40</span><sup>+</sup></div><p>Designers, grown from a team of two. I've also mentored juniors at AlphaSense and Sapient.</p></div>
+        </div>
+        <div class="stat rv">
+          <span class="lbl">Years in design</span>
+          <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <div><div class="num"><span data-count="15">15</span><sup>+</sup></div><p>Across e-commerce, fintech, AI, SaaS and healthcare.</p></div>
+        </div>
+        <div class="stat rv">
+          <span class="lbl">Orion design system</span>
+          <div class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg></div>
+          <div><div class="num"><span data-count="40">40</span><sup>%</sup></div><p>Fewer design–dev feedback cycles.</p></div>
+        </div>
+        <div class="stat rv">
+          <span class="lbl">FedEx customs</span>
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></div>
+          <div><div class="num"><span data-count="80">80</span><sup>%</sup></div><p>Of users finished tasks faster with the redesign.</p></div>
+        </div>
+        <div class="stat rv">
+          <span class="lbl">Workshops</span>
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9V16h7v-2.1A6 6 0 0 0 12 3z"/></svg></div>
+          <div><div class="num"><span data-count="20">20</span><sup>+</sup></div><p>Use cases found in one design-thinking programme.</p></div>
+        </div>
+        <div class="stat wide rv">
+          <span class="lbl">Recognition</span>
+          <div class="award" style="margin-top:14px">
+            <div class="medal" aria-hidden="true"><span>★</span></div>
+            <div><h3>"Best Enterprise Solution"</h3><p>Awarded by the FedEx team for the customs clearance redesign.</p></div>
+          </div>
+        </div>
+        <div class="stat rv">
+          <span class="lbl">Global reach</span>
+          <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg></div>
+          <div><div class="num"><span data-count="3">3</span></div><p>Regions where I've led workshops: Singapore, Europe and ANZ.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="wrap rv">
+      <div class="eyebrow" style="justify-content:center"><b>07</b> Contact</div>
+      <h2>Let's build something <em>people love.</em></h2>
+      <p>Hiring a design leader, or need help scaling a design team or design system? Drop me a line.</p>
+      <div class="mail">
+        <span id="email">subhashux@gmail.com</span>
+        <button class="btn dark" id="copy" type="button">Copy email</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><footer><span>© 2026 SUBHASH KAPOOR</span><span>DESIGN MANAGER · PRODUCT DESIGN LEADER</span></footer></div>
+</main>
+
+<script src="app.js"></script>
+
+</body>
+</html>
