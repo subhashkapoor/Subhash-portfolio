@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Case study: designing the Sukoon insurance app for UAE customers. Motor and health policies, scan-first claims and clear claim status.">
+<style>html{color-scheme:light}body{margin:0}img{max-width:100%}</style>
+<title>Sukoon App Case Study · Subhash Kapoor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="sukoon.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="mark" href="index.html" aria-label="Back to portfolio">SK</a>
+  <nav class="pill" aria-label="Case study sections">
+    <a href="index.html#work" class="back">&larr; Portfolio</a>
+    <a href="#overview" data-s="overview">Overview</a>
+    <a href="#challenge" data-s="challenge">Challenge</a>
+    <a href="#process" data-s="process">Process</a>
+    <a href="#flows" data-s="flows">Key flows</a>
+    <a href="#system" data-s="system">Design system</a>
+    <a href="#outcomes" data-s="outcomes">Outcomes</a>
+  </nav>
+</header>
+<main id="main">
+<header class="sk-hero">
+  <div class="wrap">
+    <div>
+      <div class="brandmark"><img src="img/sukoon/s01.webp" alt="Sukoon app icon" width="40" height="40"><span>Sukoon Insurance · UAE · iOS &amp; Android</span></div>
+      <h1>Insurance that fits in <em>one hand.</em></h1>
+      <p class="lede">Designing the Sukoon app: one place for UAE customers to link their motor and health policies, file a claim from the roadside, and follow it until it's paid.</p>
+      <div class="hero-meta">
+        <span class="chip">Mobile app · 0→1</span><span class="chip">Motor + Health</span><span class="chip">6 design sprints</span><span class="chip">Shipped to App Store &amp; Play</span>
+      </div>
+    </div>
+    <div class="fan" aria-label="Three key screens">
+      <figure class="ph"><div class="scr"><img src="img/sukoon/s02.webp" alt="Onboarding: manage your policies instantly"></div></figure>
+      <figure class="ph"><div class="scr"><img src="img/sukoon/s03.webp" alt="Health policy home with card and claims"></div></figure>
+      <figure class="ph"><div class="scr"><img src="img/sukoon/s04.webp" alt="Motor claim step 1"></div></figure>
+    </div>
+  </div>
+</header>
+
+<!-- OVERVIEW -->
+<section id="overview">
+  <div class="wrap two">
+    <div class="stack">
+      <div class="eyebrow">Overview</div>
+      <h2>Policies, claims and help were spread across <em>phone lines, branches</em> and email.</h2>
+    </div>
+    <div class="stack">
+      <p class="lede">Sukoon customers held motor and health policies, but the everyday jobs around them (checking cover, proving it at a clinic, reporting an accident, chasing a claim) happened outside any single product.</p>
+      <p>We designed a native app that brings those jobs into one place. It works for people who already hold a Sukoon policy and for people who are only shopping, and it treats the moments that matter most (an accident, a hospital visit) as the primary use cases rather than edge cases.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <dl class="snap">
+      <div><dt>My role</dt><dd>UX &amp; UI design</dd></div>
+      <div><dt>Team</dt><dd>Design: Subhash, Anusha</dd></div>
+      <div><dt>Cadence</dt><dd>6 design sprints</dd></div>
+      <div><dt>Platform</dt><dd>iOS &amp; Android, English</dd></div>
+      <div><dt>Scope</dt><dd>20+ flows across motor, health &amp; servicing</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section id="challenge" class="alt">
+  <div class="wrap two">
+    <div class="stack">
+      <div class="eyebrow">The challenge</div>
+      <h2>Insurance is used at the <em>worst possible</em> moment.</h2>
+      <p class="lede">Nobody opens an insurance app for fun. They open it beside a dented car, at a pharmacy counter, or when a claim has gone quiet. Every screen had to work for someone stressed, outdoors, on one bar of signal.</p>
+    </div>
+    <div class="pains">
+      <div class="pain"><span class="k">A</span><div><h3>Linking a policy meant knowing a policy number</h3><p>Most customers don't. They do know their Emirates ID, and they carry their health card.</p></div></div>
+      <div class="pain"><span class="k">B</span><div><h3>Claims were forms, then phone calls</h3><p>A motor claim needs a police report, Mulkiya, licence and invoice. Typing all of that by hand on a phone is where people give up.</p></div></div>
+      <div class="pain"><span class="k">C</span><div><h3>Status lived inside the call centre</h3><p>Once submitted, a claim disappeared. Customers called to ask "where is it?"</p></div></div>
+      <div class="pain"><span class="k">D</span><div><h3>Two audiences, one front door</h3><p>Existing customers want their policies; prospects want a quote. The app had to serve both without making either feel lost.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRINCIPLES -->
+<section id="principles" class="band">
+  <div class="wrap">
+    <div class="eyebrow">Design principles</div>
+    <h2 style="margin-top:16px;max-width:18ch">Four rules every screen <em>had to pass</em></h2>
+    <div class="principles">
+      <div><h3>Scan, don't type</h3><p>If the data is printed on a card or report, the camera reads it and the customer confirms it. Manual entry stays as the fallback.</p></div>
+      <div><h3>Help is one tap away</h3><p>A floating call button sits on every screen that could end in a stuck customer, from linking to claims.</p></div>
+      <div><h3>Always show where I am</h3><p>Numbered steppers, review screens and plain status chips replace silence after "Submit".</p></div>
+      <div><h3>Calm by design</h3><p>Sukoon means "calm". Line-art illustration, one accent colour and generous space keep stressful tasks feeling manageable.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="eyebrow">Process</div>
+    <h2 style="margin-top:16px;max-width:22ch">Six sprints, each ending in a <em>clickable prototype</em></h2>
+    <p class="lede" style="margin-top:16px">We shipped the design in vertical slices. Each sprint closed with a prototype walkthrough with Sukoon stakeholders, then a dev-ready handoff mapped to components.</p>
+    <div class="tl" tabindex="0" aria-label="Project timeline">
+      <div><span class="t">Sprint 1</span><h3>Access &amp; navigation</h3><p>Splash, onboarding, sign-in, UAE Pass, biometrics, user journey map</p></div>
+      <div><span class="t">Sprint 2</span><h3>Policies</h3><p>Link and view health and motor policies, Go Saver</p></div>
+      <div><span class="t">Sprint 3</span><h3>Dashboard</h3><p>Adaptive home, motor quote, first claim entry points</p></div>
+      <div><span class="t">Sprint 4</span><h3>Motor claims</h3><p>Submit and view motor claims with document OCR</p></div>
+      <div><span class="t">Sprint 5</span><h3>Health claims</h3><p>Reimbursement, direct billing, pharmacy, pre-auth</p></div>
+      <div><span class="t">Sprint 6</span><h3>Service layer</h3><p>Search, notifications, help, live chat, video resources</p></div>
+      <div class="hot"><span class="t">Sign-off</span><h3>Walkthroughs</h3><p>End-to-end sign-off sessions, gap analysis, error scenarios</p></div>
+      <div class="hot"><span class="t">Launch</span><h3>Hypercare</h3><p>App Store assets, post-launch fixes, design-system update</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- IA -->
+<section id="structure" class="alt">
+  <div class="wrap">
+    <div class="eyebrow">Information architecture</div>
+    <h2 style="margin-top:16px;max-width:20ch">Four tabs, organised by <em>the job,</em> not the product line</h2>
+    <p class="lede" style="margin-top:16px">Customers think in tasks ("make a claim"), not product lines, so the tabs follow tasks and the policy type becomes a filter inside them.</p>
+    <div class="ia">
+      <div><h3>Home <span>01</span></h3><ul><li>Link health / motor / Go Saver</li><li>Policy cards &amp; active claims</li><li>Explore products</li><li>Quick links, biometrics, notifications</li></ul></div>
+      <div><h3>Buy now <span>02</span></h3><ul><li>Motor quote in ~3 minutes</li><li>Travel, home, life, accident</li><li>Online-only discounts</li></ul></div>
+      <div><h3>Claims <span>03</span></h3><ul><li>Submit motor &amp; health claims</li><li>Reimbursement, direct, pharmacy</li><li>Pre-authorisation requests</li><li>Status &amp; bank details</li></ul></div>
+      <div><h3>Support <span>04</span></h3><ul><li>Roadside &amp; medical emergency</li><li>Network coverage, branches</li><li>Live chat, video guides</li><li>Complaints, policy letters</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 1 -->
+<section id="flows">
+  <div class="wrap">
+    <div class="chapter-head"><span class="chapter-num" aria-hidden="true">01</span>
+      <div class="stack"><div class="eyebrow">First launch</div><h2>Two doors at the front: <em>customer,</em> or not yet</h2>
+      <p class="lede">The welcome screen asks one question instead of forcing a sign-up. Prospects get products and a quote; customers sign in with email or UAE Pass, the national digital ID most residents already use.</p></div></div>
+    <div class="rail-wrap rail" tabindex="0" aria-label="Onboarding screens">
+      <figure class="ph"><div class="scr"><img src="img/sukoon/s05.webp" alt="Splash"></div><figcaption><b>Splash</b>Brand mark only, under a second.</figcaption></figure>
+      <figure class="ph"><div class="scr"><img src="img/sukoon/s02.webp" alt="Onboarding 1"></div><figcaption><b>Manage policies</b>Three-card carousel, one promise per card.</figcaption></figure>
+      <figure class="ph"><div class="scr"><img src="img/sukoon/s06.webp" alt="Onboarding 2"></div><figcaption><b>Track claims</b>Sets the expectation of real-time updates.</figcaption></figure>
+      <figure class="ph"><div class="scr"><img src="img/sukoon/s07.webp" alt="Onboarding 3"></div><figcaption><b>Recommended products</b>For existing customers.</figcaption></figure>
+      <figure class="ph"><div class="scr"><img src="img/sukoon/s08.webp" alt="Welcome"></div><figcaption><b>Choose your door</b>Emergency quick links work before sign-in.</figcaption></figure>
+      <figure class="ph"><div class="scr"><img src="img/sukoon/s09.webp" alt="Sign in"></div><figcaption><b>Sign in</b>Email or UAE Pass, nothing else.</figcaption></figure>
+      <figure class="ph"><div class="scr"><img src="img/sukoon/s10.webp" alt="Enable biometrics"></div><figcaption><b>Biometrics</b>Offered once, skippable, reversible in settings.</figcaption></figure>
+      <figure class="ph"><div class="scr"><img src="img/sukoon/s11.webp" alt="All set"></div><figcaption><b>Confirmation</b>Same success pattern used app-wide.</figcaption></figure>
+      <figure class="ph"><div class="scr"><img src="img/sukoon/s12.webp" alt="Explore products"></div><figcaption><b>Not yet a customer</b>Six product lines, discounts up front.</figcaption></figure>
+    </div>
+    <div class="decisions">
+      <div><span class="tag">Decision</span><h3>Emergency links before login</h3><p>Roadside assistance, medical services, support and branches sit on the welcome screen. In an accident, a password reset is the last thing anyone needs.</p></div>
+      <div><span class="tag">Decision</span><h3>UAE Pass as an equal option</h3><p>Shown as a full-width button rather than a small "other ways" link, because it removes passwords for most residents.</p></div>
+      <div><span class="tag">Decision</span><h3>Biometrics asked once</h3><p>A single, skippable prompt after first sign-in, with a clear "not enabled" state if the device refuses.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 2 -->
+<section id="home" class="alt">
+  <div class="wrap">
+    <div class="chapter-head"><span class="chapter-num" aria-hidden="true">02</span>
+      <div class="stack"><div class="eyebrow">Home</div><h2>A home screen that <em>changes</em> once you link a policy</h2>
+      <p class="lede">Before linking, home is a guide: link a policy, explore products, get a quote. After linking, it becomes your policy, with the health card front and centre and your claims listed with their status.</p></div></div>
+    <div class="ba">
+      <figure class="ph"><div class="scr tall" tabindex="0"><img src="img/sukoon/s13.webp" alt="Dashboard before linking"></div><figcaption><b>Before linking</b><span class="scrollhint">SCROLL INSIDE ↕</span> Linking is the first and largest action.</figcaption></figure>
+      <figure class="ph"><div class="scr tall" tabindex="0"><img src="img/sukoon/s03.webp" alt="Health policy after linking"></div><figcaption><b>After linking</b><span class="scrollhint">SCROLL INSIDE ↕</span> Digital health card, claims with status, nearby hospitals.</figcaption></figure>
+    </div>
+    <div class="status" aria-label="Claim status chips"><span class="st p">● PENDING</span><span class="st a">● APPROVED</span><span class="st r">● REJECTED</span><span class="st a">SETTLED</span></div>
+  </div>
+</section>
+
+<!-- CHAPTER 3 -->
+<section id="linking">
+  <div class="wrap">
+    <div class="chapter-head"><span class="chapter-num" aria-hidden="true">03</span>
+      <div class="stack"><div class="eyebrow">Link a policy</div><h2>Link with what's <em>already in your wallet</em></h2>
+      <p class="lede">Instead of a policy number, customers link with their Emirates ID or health card number. The ID can be scanned, the illustrated card shows exactly where the number is, and an error explains what to try next.</p></div></div>
+    <div class="rail-wrap rail" tabindex="0" aria-label="Link policy screens">
+      <figure class="ph"><div class="scr"><img src="img/sukoon/s14.webp" alt="Choose method"></div><figcaption><b>Pick a method</b>Two options people actually have to hand.</figcaption></figure>
+      <figure class="ph"><div class="scr"><img src="img/sukoon/s15.webp" alt="Emirates ID entry"></div><figcaption><b>Scan or type</b>The card diagram highlights the 15-digit number.</figcaption></figure>
+      <figure class="ph"><div class="scr"><img src="img/sukoon/s16.webp" alt="Linked"></div><figcaption><b>Linked</b>Two next steps: see the policy, or go home.</figcaption></figure>
+      <figure class="ph"><div class="scr"><img src="img/sukoon/s17.webp" alt="Not linked"></div><figcaption><b>Not linked</b>Says what was wrong; retry is the first action.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 4 -->
+<section id="claims" class="alt">
+  <div class="wrap">
+    <div class="chapter-head"><span class="chapter-num" aria-hidden="true">04</span>
+      <div class="stack"><div class="eyebrow">Hero flow · Motor claim</div><h2>From roadside to submitted, <em>without typing</em> a report</h2>
+      <p class="lede">The motor claim is the flow that justifies the app. We split it into six visible steps and let the camera do the data entry: scan the police report, Mulkiya or driving licence, then confirm what the app read.</p></div></div>
+    <div class="steps"><span><b>1</b>Claim details</span><span><b>2</b>Police report</span><span><b>3</b>Repairer</span><span><b>4</b>Documents</span><span><b>5</b>Contact</span><span><b>6</b>Review</span></div>
+    <div class="rail-wrap rail" tabindex="0" aria-label="Motor claim screens">
+      <figure class="ph"><div class="scr"><img src="img/sukoon/s18.webp" alt="Before you start"></div><figcaption><b>Before you start</b>Which covers can be claimed in-app, and who to call for the rest.</figcaption></figure>
+      <figure class="ph"><div class="scr"><img src="img/sukoon/s04.webp" alt="Claim details"></div><figcaption><b>1 · Claim details</b>Vehicle is preselected from the linked policy.</figcaption></figure>
+      <figure class="ph"><div class="scr"><img src="img/sukoon/s19.webp" alt="Police report scan"></div><figcaption><b>2 · Scan the report</b>"What should I scan?" answers the most common question.</figcaption></figure>
+      <figure class="ph"><div class="scr"><img src="img/sukoon/s20.webp" alt="Confirm OCR"></div><figcaption><b>Confirm what we read</b>OCR output as a checklist; Yes/No before proceeding.</figcaption></figure>
+      <figure class="ph"><div class="scr tall" tabindex="0"><img src="img/sukoon/s21.webp" alt="Upload documents"></div><figcaption><b>4 · Documents</b><span class="scrollhint">SCROLL INSIDE ↕</span> One slot per document, front and back explained.</figcaption></figure>
+      <figure class="ph"><div class="scr tall" tabindex="0"><img src="img/sukoon/s22.webp" alt="Review"></div><figcaption><b>6 · Review</b><span class="scrollhint">SCROLL INSIDE ↕</span> Every section collapsible and editable in place.</figcaption></figure>
+    </div>
+    <div class="decisions">
+      <div><span class="tag">Decision</span><h3>OCR with a human check</h3><p>The scan fills the fields, but the customer always confirms. A "No" sends them to edit, never to a dead end.</p></div>
+      <div><span class="tag">Decision</span><h3>Scenario-driven design</h3><p>We mapped five Step 1 scenarios (owner driving, other driver, Mulkiya scan, licence scan, manual entry) and designed each path with its own confirmation sheet.</p></div>
+      <div><span class="tag">Decision</span><h3>Review before commit</h3><p>A full summary with inline "Edit" links replaces the anxiety of a blind submit, and catches typos before they become phone calls.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 5 -->
+<section id="tracking">
+  <div class="wrap">
+    <div class="chapter-head"><span class="chapter-num" aria-hidden="true">05</span>
+      <div class="stack"><div class="eyebrow">After submit</div><h2>Every claim has a status <em>you can read</em></h2>
+      <p class="lede">Claims are grouped into active and closed, filterable by family member and period, and each opens to a detail page that answers the questions people used to call about: how much, what status, last updated when.</p></div></div>
+    <div class="rail-wrap rail" tabindex="0" aria-label="Claim tracking screens">
+      <figure class="ph"><div class="scr tall" tabindex="0"><img src="img/sukoon/s23.webp" alt="My claims"></div><figcaption><b>My requests</b><span class="scrollhint">SCROLL INSIDE ↕</span> Claims, pharmacy and pre-auth in one place.</figcaption></figure>
+      <figure class="ph"><div class="scr tall" tabindex="0"><img src="img/sukoon/s24.webp" alt="Health claim detail"></div><figcaption><b>Health claim</b>Claimed vs approved, payment status, remarks.</figcaption></figure>
+      <figure class="ph"><div class="scr tall" tabindex="0"><img src="img/sukoon/s25.webp" alt="Motor claim detail"></div><figcaption><b>Motor claim</b>Repairer, approval type and dates at a glance.</figcaption></figure>
+      <figure class="ph"><div class="scr"><img src="img/sukoon/s26.webp" alt="Bank details updated"></div><figcaption><b>Bank details</b>Update IBAN mid-flow, confirmed in a sheet.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 6 -->
+<section id="service" class="alt">
+  <div class="wrap">
+    <div class="chapter-head"><span class="chapter-num" aria-hidden="true">06</span>
+      <div class="stack"><div class="eyebrow">Service layer</div><h2>Find anything, <em>reach someone</em></h2>
+      <p class="lede">Search understands tasks ("download orange card", "IBAN details"), notifications link to the next action, and network coverage lets a customer find an in-network clinic by emirate before they walk in.</p></div></div>
+    <div class="rail-wrap rail" tabindex="0" aria-label="Service screens">
+      <figure class="ph"><div class="scr"><img src="img/sukoon/s27.webp" alt="Search"></div><figcaption><b>Task search</b>Results are actions, not pages.</figcaption></figure>
+      <figure class="ph"><div class="scr"><img src="img/sukoon/s28.webp" alt="Notifications"></div><figcaption><b>Notifications</b>Each one ends in a link; swipe to clear.</figcaption></figure>
+      <figure class="ph"><div class="scr tall" tabindex="0"><img src="img/sukoon/s29.webp" alt="Network coverage"></div><figcaption><b>Network coverage</b>Clinics to wellness partners, by emirate.</figcaption></figure>
+      <figure class="ph"><div class="scr"><img src="img/sukoon/s30.webp" alt="Help and support"></div><figcaption><b>Help &amp; support</b>Hours, numbers and email as text you can see.</figcaption></figure>
+      <figure class="ph"><div class="scr"><img src="img/sukoon/s31.webp" alt="Get orange card"></div><figcaption><b>Orange card</b>GCC cross-border cover, downloaded in two taps.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- DESIGN LANGUAGE -->
+<section id="system">
+  <div class="wrap">
+    <div class="eyebrow">Design language</div>
+    <h2 style="margin-top:16px;max-width:20ch">A calm system built on <em>one plum</em> and one spark of orange</h2>
+    <div class="swatches">
+      <div class="sw"><i style="background:#671E75"></i><div>Sukoon Plum<code>#671E75 · primary</code></div></div>
+      <div class="sw"><i style="background:#FF5E00"></i><div>Signal Orange<code>#FF5E00 · accent, help</code></div></div>
+      <div class="sw"><i style="background:#F6F1F7"></i><div>Lavender Mist<code>#F6F1F7 · surfaces</code></div></div>
+      <div class="sw"><i style="background:#CFBDD6"></i><div>Lilac Line<code>#CFBDD6 · borders</code></div></div>
+      <div class="sw"><i style="background:#1C171C"></i><div>Ink<code>#1C171C · text</code></div></div>
+    </div>
+    <div class="typespec">
+      <div><div class="big">Let's get a few details</div><small>DISPLAY · BCN ARABIC ROUNDED · UPPERCASE HEADLINES 24–44</small></div>
+      <div><p style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:1.05rem">Use your Emirates ID card number. Your Emirates ID number is the 15-digit number on the front of your UAE ID card.</p><small>BODY · HELVETICA NEUE · 12 / 14 / 16</small></div>
+    </div>
+    <div class="comps">
+      <div><div class="fab" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></div><h3>Floating call button</h3><p>Persistent on every task screen; opens roadside, medical or Genesys live chat.</p></div>
+      <div><div class="steps" style="margin:0 0 16px"><span><b>✓</b>1</span><span><b>●</b>2</span><span>3</span></div><h3>Numbered stepper</h3><p>Completed steps turn orange, so progress reads at a glance on long claims.</p></div>
+      <div><div class="status" style="margin:0 0 16px"><span class="st p">PENDING</span><span class="st a">APPROVED</span></div><h3>Status chips</h3><p>Colour plus a word, never colour alone, across claims, pre-auth and pharmacy.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- OUTCOMES -->
+<section id="outcomes" class="alt">
+  <div class="wrap two">
+    <div class="stack">
+      <div class="eyebrow">Outcomes</div>
+      <h2>What <em>shipped</em></h2>
+      <p class="lede">The app launched on the App Store and Google Play with motor and health servicing end to end.</p>
+      <div class="outcomes" style="grid-template-columns:1fr 1fr">
+        <div><div class="n">20+</div><p>flows designed across motor, health and servicing</p></div>
+        <div><div class="n">6</div><p>design sprints, each closed with a clickable prototype walkthrough</p></div>
+        <div><div class="n">2</div><p>platforms, iOS and Android, from one design system</p></div>
+        <div><div class="n">0→1</div><p>a first mobile app for the customer, shipped to both stores</p></div>
+      </div>
+    </div>
+    <div class="stack">
+      <div class="eyebrow">What I learned</div>
+      <div class="learn">
+        <p><b>Design the error before the happy path.</b> In a regulated product most of the work sat in rejected scans, mismatched IDs and failed links. We kept a dedicated error-scenario page and reviewed it every sprint.</p>
+        <p><b>Sign-off walkthroughs beat review comments.</b> Walking stakeholders through a clickable prototype end to end surfaced gaps that static reviews missed, and gave us a clean gap analysis before build.</p>
+        <p><b>A design system pays for itself in hypercare.</b> Post-launch fixes to upload, notification and status components rolled out across every flow at once.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="end">
+  <div class="wrap">
+    <div class="eyebrow">Thank you</div>
+    <h2 style="margin-top:20px">Calm, <em>in your pocket.</em></h2>
+    <p>Thanks to the Sukoon team and everyone who joined the walkthroughs.</p>
+    <div class="credits"><span>UX &amp; UI · Subhash Kapoor</span><span>Design · Anusha</span><span>Screens shown are design files with sample data</span></div>
+    <div class="back-row"><a class="btn dark" href="index.html#work"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 8H3M7 4L3 8l4 4"/></svg>Back to portfolio</a><a class="btn" href="index.html#contact">Get in touch</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.pill a[data-s]'));
+  var map={};links.forEach(function(a){map[a.dataset.s]=a});
+  var ids=['overview','challenge','principles','process','structure','flows','home','linking','claims','tracking','service','system','outcomes'];
+  var group={principles:'challenge',structure:'process',home:'flows',linking:'flows',claims:'flows',tracking:'flows',service:'flows'};
+  if(!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;
+    var k=group[e.target.id]||e.target.id;links.forEach(function(a){a.classList.toggle('on',a===map[k])});
+    var on=map[k];if(on&&on.scrollIntoView&&matchMedia('(max-width:720px)').matches){var p=on.parentNode;p.scrollLeft=on.offsetLeft-16}
+  })},{rootMargin:'-45% 0px -50% 0px'});
+  ids.forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)});
+})();
+</script>
+</body>
+</html>
