@@ -199,6 +199,16 @@ section{position:relative;padding-block:clamp(72px,10vw,128px)}
 .field b{font-weight:600}
 .ok{color:#2E8B57;font-weight:600}
 
+
+/* case with link-out (Sukoon) */
+.cs-link{margin-top:22px}
+.stage.phones{gap:0;align-items:flex-end;padding-bottom:0}
+.stage.phones .phone{display:block;width:min(34%,150px);border:5px solid #1A1F31;border-bottom:0;border-radius:22px 22px 0 0;overflow:hidden;background:#fff;box-shadow:var(--shadow);align-self:flex-end;margin:0 -4px;transform:translateY(14px) rotate(-3deg);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.stage.phones .phone.mid{transform:translateY(34px) rotate(3deg);width:min(36%,160px)}
+.stage.phones .phone:hover{transform:translateY(0) rotate(0)}
+.stage.phones .phone img{display:block;width:100%;height:auto}
+.stage.phones{max-height:100%}
+
 /* ---------- timeline ---------- */
 .tl{position:relative;display:grid;gap:0;margin-top:40px}
 .tl::before{content:"";position:absolute;left:clamp(120px,18vw,230px);top:8px;bottom:8px;width:1px;background:var(--line)}
