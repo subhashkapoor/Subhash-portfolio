@@ -26,6 +26,31 @@
     .sitemap-cap{font-size:14px;color:var(--muted);margin-top:12px}
     .roles{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
     .rtl-label{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;color:var(--accent)}
+
+    /* Showcase intro (project-title style) */
+    .showcase{position:relative;overflow:hidden;background:#F7F6F3;color:#1A1F31;padding-block:clamp(64px,8vw,104px) clamp(120px,12vw,170px)}
+    .showcase .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px;align-items:center;position:relative;z-index:1}
+    .showcase .rings{position:absolute;left:38%;top:50%;width:900px;height:900px;transform:translate(-50%,-50%);border-radius:50%;
+      background:repeating-radial-gradient(circle,transparent 0 70px,rgba(26,31,49,.045) 70px 118px);pointer-events:none}
+    .showcase .arc{position:absolute;left:-110px;bottom:-150px;width:250px;height:250px;border-radius:50%;background:#521C78;box-shadow:0 0 0 34px #E9B949;pointer-events:none}
+    .showcase .num{position:absolute;left:22px;bottom:12px;font-size:48px;font-weight:300;color:rgba(255,255,255,.28);letter-spacing:-.02em;z-index:1}
+    .showcase .kicker{font-family:var(--f-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#7A6F86}
+    .showcase h2{font-size:clamp(34px,4.4vw,56px);font-weight:700;color:#521C78;letter-spacing:-.03em;line-height:1.05;margin-top:14px}
+    .showcase .sum{font-size:17px;line-height:1.6;color:#4A4A55;margin-top:20px;max-width:46ch}
+    .showcase .meta{display:grid;gap:18px;margin-top:32px}
+    .showcase .meta>div{display:flex;gap:16px;align-items:center}
+    .showcase .meta .ic{width:48px;height:48px;flex:none;border-radius:50%;border:1.5px solid #521C78;display:grid;place-items:center;color:#521C78}
+    .showcase .meta .ic svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .showcase .meta b{display:block;font-size:17px;color:#521C78;font-weight:600}
+    .showcase .meta span{font-size:15px;color:#4A4A55}
+    .collage{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;height:620px;margin-right:calc(-1 * var(--gutter) - 60px)}
+    .collage .col{display:flex;flex-direction:column;gap:22px}
+    .collage .col:nth-child(1){padding-top:110px}
+    .collage .col:nth-child(2){margin-top:-150px}
+    .collage .col:nth-child(3){padding-top:40px}
+    .collage .pf{border:7px solid #111;border-radius:34px;overflow:hidden;background:#111;box-shadow:0 24px 50px -24px rgba(26,31,49,.55);aspect-ratio:393/820;flex:none}
+    .collage .pf img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+    @media (max-width:860px){.showcase .wrap{grid-template-columns:1fr}.collage{height:460px;margin-right:calc(-1 * var(--gutter) - 40px)}}
     @media (max-width:720px){.personas{grid-template-columns:1fr}.persona dl{grid-template-columns:1fr}}
   </style>
 </head>
@@ -62,6 +87,28 @@
       </div>
     </div>
   </header>
+
+  <!-- SHOWCASE -->
+  <section class="showcase" aria-label="Project summary">
+    <div class="rings" aria-hidden="true"></div><div class="arc" aria-hidden="true"></div><span class="num" aria-hidden="true">06</span>
+    <div class="wrap">
+      <div>
+        <div class="kicker">Project 06 · Real estate · KSA</div>
+        <h2>Dar Al Arkan property app</h2>
+        <p class="sum">One app for the whole property market: buyers and renters search, map and enquire, while owners, brokers, developers and agents list homes and follow every lead.</p>
+        <div class="meta">
+          <div><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg></span><div><b>My role</b><span>UX &amp; UI design, research to handoff</span></div></div>
+          <div><span class="ic"><svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span><div><b>Platforms</b><span>iOS &amp; Android · English &amp; Arabic</span></div></div>
+          <div><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span><div><b>Scope</b><span>136 screens across 5 user roles</span></div></div>
+        </div>
+      </div>
+      <div class="collage" aria-hidden="true">
+        <div class="col"><div class="pf"><img src="img/daa/d06.webp" alt=""></div></div>
+        <div class="col"><div class="pf"><img src="img/daa/d09.webp" alt=""></div><div class="pf"><img src="img/daa/d14.webp" alt=""></div></div>
+        <div class="col"><div class="pf"><img src="img/daa/d17.webp" alt=""></div><div class="pf"><img src="img/daa/d30.webp" alt=""></div></div>
+      </div>
+    </div>
+  </section>
 
   <!-- OVERVIEW -->
   <section id="overview">
