@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="Case study: modernising the website and app of a luxury department store in Australia. UX audit, header and navigation, wishlist, authentication and a legacy design-system upgrade, designed at Publicis Sapient.">
+  <style>html{color-scheme:light}body{margin:0}img{max-width:100%}</style>
+  <title>Luxury E-commerce Case Study · Subhash Kapoor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="sukoon.css">
+  <style>
+    /* Luxury e-commerce additions on top of the shared case-study styles */
+    .fan::before{content:"LUXE"}
+    .shot{margin:0;display:flex;flex-direction:column;gap:12px;min-width:0}
+    .shot .win{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#fff;box-shadow:var(--shadow)}
+    .shot .bar{display:flex;align-items:center;gap:6px;height:28px;padding:0 12px;background:#EDEAE3;border-bottom:1px solid var(--line)}
+    .shot .bar i{width:9px;height:9px;border-radius:50%;background:#D3CDC1}
+    .shot .win img{display:block;width:100%;height:auto}
+    .shot figcaption{font-size:14px;color:var(--muted)}
+    .shot figcaption b{display:block;color:var(--ink);font-weight:700;font-size:15px;margin-bottom:2px}
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin-top:48px}
+    .duo{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:32px;margin-top:48px;align-items:start}
+    .duo .ph{max-width:260px;justify-self:center;width:100%}
+    .tracks{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:48px}
+    .tracks>div{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:22px;min-width:0}
+    .tracks span{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+    .tracks h3{margin-top:8px}
+    .tracks p{font-size:14px;color:var(--muted);margin-top:8px}
+    .audit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:48px}
+    .audit-grid>div{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:22px;min-width:0}
+    .audit-grid .law{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+    .audit-grid h3{margin-top:8px;font-size:17px}
+    .audit-grid p{font-size:14px;color:var(--muted);margin-top:8px}
+    .audit-grid .fix{color:var(--ink);font-weight:500}
+    .refs{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+    .slide{margin:48px 0 0;border-radius:var(--r-md);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)}
+    .slide img{display:block;width:100%;height:auto}
+    .cap{font-size:14px;color:var(--muted);margin-top:10px}
+    .states{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+    .states span{font-size:13px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface)}
+    .states span.err{border-color:color-mix(in srgb,#F34040 45%,transparent);color:#B3402F}
+    @media (max-width:860px){.grid2,.duo,.tracks,.audit-grid{grid-template-columns:1fr}}
+    @media (min-width:861px) and (max-width:1080px){.tracks{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  </style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="mark" href="index.html" aria-label="Back to portfolio">SK</a>
+  <nav class="pill" aria-label="Case study sections">
+    <a href="index.html#work" class="back">&larr; Portfolio</a>
+    <a href="#overview" data-s="overview">Overview</a>
+    <a href="#audit" data-s="audit">Audit</a>
+    <a href="#header" data-s="header">Header</a>
+    <a href="#wishlist" data-s="wishlist">Wishlist</a>
+    <a href="#auth" data-s="auth">Sign in</a>
+    <a href="#system" data-s="system">Design system</a>
+    <a href="#outcomes" data-s="outcomes">Outcomes</a>
+  </nav>
+</header>
+
+<main id="main">
+  <header class="sk-hero">
+    <div class="wrap">
+      <div>
+        <div class="brandmark"><span>Luxury department store · Australia · Publicis Sapient</span></div>
+        <h1>Luxury retail, <em>minus the friction.</em></h1>
+        <p class="lede">Modernising the website and app of one of Australia's best-known luxury department stores: a UX audit, a calmer header and navigation, a wishlist built for gifting, sign-in that doesn't get in the way, and an upgraded design system underneath it all.</p>
+        <div class="hero-meta">
+          <span class="chip">Web + iOS/Android app</span><span class="chip">4 breakpoints</span><span class="chip">Design system upgrade</span><span class="chip">+4% client sales YoY</span>
+        </div>
+      </div>
+      <div class="fan" aria-label="Three key screens">
+        <figure class="ph"><div class="scr"><img src="img/luxury/app-signin.webp" alt="App sign-in screen"></div></figure>
+        <figure class="ph"><div class="scr tall"><img src="img/luxury/wishlist-empty-m.webp" alt="Empty wishlist on mobile web with recommendations"></div></figure>
+        <figure class="ph"><div class="scr"><img src="img/luxury/app-error2.webp" alt="App sign-in with an error message"></div></figure>
+      </div>
+    </div>
+  </header>
+
+  <!-- OVERVIEW -->
+  <section id="overview">
+    <div class="wrap two">
+      <div class="stack">
+        <div class="eyebrow">Overview</div>
+        <h2>A heritage brand with a <em>legacy</em> website.</h2>
+      </div>
+      <div class="stack">
+        <p class="lede">The store is a household name, but its online experience had grown piece by piece over years: dense menus, inconsistent components and a legacy design system that slowed every release.</p>
+        <p>Working in fortnightly sprints with the client's product, engineering and content teams, I audited the current experience, then redesigned the high-traffic and high-value pieces one at a time: the site furniture (header and footer), the wishlist, and authentication on web and app. In parallel I upgraded the design system so every new piece shipped consistently.</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="tracks">
+        <div><span>Track 01</span><h3>Current-state audit</h3><p>UX heuristics review, live-site testing on desktop and mobile, documentation and typography audit.</p></div>
+        <div><span>Track 02</span><h3>Site furniture</h3><p>Header, mega menu, account menu and footer, tested with customers before sign-off.</p></div>
+        <div><span>Track 03</span><h3>Wishlist &amp; sign-in</h3><p>Save, manage and share wishlists; create account, sign in, reset password and account deletion.</p></div>
+        <div><span>Track 04</span><h3>Design system</h3><p>Upgrading a legacy library into documented, dev-ready components for web and app.</p></div>
+      </div>
+      <dl class="snap">
+        <div><dt>My role</dt><dd>UX lead &amp; hands-on design</dd></div>
+        <div><dt>Client</dt><dd>Luxury department store, Australia</dd></div>
+        <div><dt>Agency</dt><dd>Publicis Sapient</dd></div>
+        <div><dt>Platforms</dt><dd>Responsive web, iOS &amp; Android app</dd></div>
+        <div><dt>Breakpoints</dt><dd>XL, L, M and S for every screen</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- AUDIT -->
+  <section id="audit" class="alt">
+    <div class="wrap">
+      <div class="eyebrow">Current-state audit</div>
+      <h2 style="margin-top:16px;max-width:22ch">Start with <em>what's already broken</em></h2>
+      <p class="lede" style="margin-top:16px">Before redesigning anything, I ran a heuristic review of the live site and tested it on desktop and mobile. Each observation came with a recommendation, so the backlog started with evidence rather than opinions.</p>
+      <div class="audit-grid">
+        <div><div class="law">Clarity</div><h3>Banners that don't look clickable</h3><p>The landing banner gave no clear cue where to tap, and people spent very little time scanning the first fold.</p><p class="fix">Make the whole banner clickable and show part of the sale offer above the fold.</p></div>
+        <div><div class="law">Hick's law</div><h3>Too many choices at once</h3><p>The more options people see, the longer they take to decide, and the mega menu showed everything.</p><p class="fix">Lead with the few most obvious paths and reveal the rest progressively.</p></div>
+        <div><div class="law">Navigation</div><h3>The header disappears on scroll</h3><p>Once people started shopping, searching or switching category meant scrolling back to the top.</p><p class="fix">Keep a minimal header pinned at all times.</p></div>
+        <div><div class="law">Consistency</div><h3>Components that behave differently</h3><p>Tooltips appeared in some places but not others, and banners switched from rounded to square shapes in checkout.</p><p class="fix">One component, one behaviour, everywhere.</p></div>
+        <div><div class="law">Feedback</div><h3>Checkout hides the total</h3><p>The order total wasn't always visible, and pressing the button shifted the layout so people had to scroll to continue.</p><p class="fix">Always show the total and keep the main button in a fixed place.</p></div>
+        <div><div class="law">Trust</div><h3>Reviews behind an extra click</h3><p>Reviews were one of the strongest trust signals but sat behind a tab that was hard to tell apart from inactive buttons.</p><p class="fix">Surface ratings and reviews up front on the product page.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HEADER -->
+  <section id="header">
+    <div class="wrap">
+      <div class="chapter-head"><span class="chapter-num" aria-hidden="true">01</span>
+        <div class="stack"><div class="eyebrow">Site furniture · Header</div><h2>A mega menu that <em>doesn't overwhelm</em></h2>
+        <p class="lede">The header is on every page, so it's the highest-traffic component on the site. I reviewed twelve retail and travel sites, from Net-a-Porter, ASOS, The Iconic and Mecca to Amazon, Airbnb and IKEA, then explored a progressive-disclosure header and tested the concepts with customers.</p></div></div>
+      <div class="refs"><span class="chip">Net-a-Porter</span><span class="chip">ASOS</span><span class="chip">The Iconic</span><span class="chip">Mecca</span><span class="chip">Myer</span><span class="chip">Princess Polly</span><span class="chip">Myntra</span><span class="chip">Amazon</span><span class="chip">Target</span><span class="chip">Airbnb</span><span class="chip">IKEA</span><span class="chip">Tripadvisor</span></div>
+      <div class="grid2">
+        <figure class="shot"><div class="win"><div class="bar"><i></i><i></i><i></i></div><img src="img/luxury/header-women.webp" alt="Header with Women selected, showing a second row of sub-categories and a category landing below" loading="lazy" width="1440" height="1024"></div><figcaption><b>Step 1 · Pick a department</b>Choosing "Women" opens a light second row of sub-categories instead of a wall of links.</figcaption></figure>
+        <figure class="shot"><div class="win"><div class="bar"><i></i><i></i><i></i></div><img src="img/luxury/header-mega.webp" alt="Mega menu for Clothing with grouped links and a sale shortcut" loading="lazy" width="1440" height="800"></div><figcaption><b>Step 2 · Go deeper only when you want to</b>The mega menu opens per sub-category, with grouped links and the sale shortcut kept in red.</figcaption></figure>
+      </div>
+      <div class="decisions">
+        <div><span class="tag">Decision</span><h3>Progressive disclosure</h3><p>Department, then sub-category, then the full menu. Each level shows a manageable number of choices, which follows the audit's Hick's-law finding.</p></div>
+        <div><span class="tag">Decision</span><h3>Search front and centre</h3><p>The search field moved to the middle of the header and got wider, because it's the first thing many shoppers reach for.</p></div>
+        <div><span class="tag">Decision</span><h3>Tested before sign-off</h3><p>Concepts ran in a customer-testing environment with live content before the final header and footer were handed over.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WISHLIST -->
+  <section id="wishlist" class="alt">
+    <div class="wrap">
+      <div class="chapter-head"><span class="chapter-num" aria-hidden="true">02</span>
+        <div class="stack"><div class="eyebrow">Wishlist</div><h2>Built for <em>gifting,</em> not just saving</h2>
+        <p class="lede">At a department store, a wishlist is often a gift list: a birthday, a wedding, a new home. So beyond saving items, people needed to name a list, describe the occasion, make it public and share a link, and the person receiving it had to be able to shop from it.</p></div></div>
+      <div class="duo">
+        <figure class="shot"><div class="win"><div class="bar"><i></i><i></i><i></i></div><img src="img/luxury/wishlist.webp" alt="My Wishlist page with product cards, quantity and Add to Bag" loading="lazy" width="1440" height="1024"></div><figcaption><b>My Wishlist · desktop</b>Size, colour, price and stock on every card, with quantity and Add to Bag right there.</figcaption></figure>
+        <figure class="ph"><div class="scr tall" tabindex="0"><img src="img/luxury/wishlist-empty-m.webp" alt="Empty wishlist on mobile with recommendations" loading="lazy"></div><figcaption><b>Empty state · mobile</b><span class="scrollhint">SCROLL INSIDE ↕</span> One clear action, plus recommendations to start from.</figcaption></figure>
+      </div>
+      <div class="grid2" style="grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);align-items:center">
+        <figure class="shot"><div class="win"><div class="bar"><i></i><i></i><i></i></div><img src="img/luxury/wishlist-panel.webp" alt="Side panel to update wishlist occasion, description and public sharing" loading="lazy" width="1440" height="1000"></div><figcaption><b>Manage &amp; share</b>A side panel for occasion, description and a public link, so the list stays visible behind it.</figcaption></figure>
+        <div class="stack">
+          <h3>Every state designed, at every breakpoint</h3>
+          <p style="color:var(--muted)">Each flow was drawn at XL, L, M and S, including the states that usually get skipped.</p>
+          <div class="states"><span>Guest → sign in</span><span>Empty</span><span>Received shared list</span><span>Make public</span><span>Share link</span><span>Remove items</span><span>Out of stock</span><span>Pagination</span><span class="err">API load error</span><span class="err">Page load error</span><span class="err">Share error</span><span class="err">Remove error</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTH -->
+  <section id="auth">
+    <div class="wrap">
+      <div class="chapter-head"><span class="chapter-num" aria-hidden="true">03</span>
+        <div class="stack"><div class="eyebrow">Authentication · web &amp; app</div><h2>Sign in when it's <em>worth it,</em> not before</h2>
+        <p class="lede">Browsing stays open to everyone. Sign-in appears when it unlocks something (a wishlist, rewards, faster checkout), as a modal that keeps you in place or a dedicated page from the account menu. I designed six flows: browsing signed out, create account, bot protection, sign in, sign out and account deletion.</p></div></div>
+      <figure class="shot" style="margin-top:48px"><div class="win"><div class="bar"><i></i><i></i><i></i></div><img src="img/luxury/signin.webp" alt="Dedicated sign-in page with Sign In and Create an Account tabs over an editorial image" loading="lazy" width="1440" height="1024"></div><figcaption><b>Sign in · dedicated page</b>Sign in and create account as two tabs of one card, over the brand's editorial photography.</figcaption></figure>
+      <div class="rail-wrap rail" tabindex="0" aria-label="App sign-in screens">
+        <figure class="ph"><div class="scr"><img src="img/luxury/app-signin.webp" alt="App sign-in, empty" loading="lazy"></div><figcaption><b>Sign in · app</b>Forgot password sits under the button, where people look after a failed attempt.</figcaption></figure>
+        <figure class="ph"><div class="scr"><img src="img/luxury/app-keyboard.webp" alt="App sign-in with keyboard and password hint" loading="lazy"></div><figcaption><b>Typing</b>Password rules show as a hint before an error, not after.</figcaption></figure>
+        <figure class="ph"><div class="scr"><img src="img/luxury/app-loading.webp" alt="App sign-in button in loading state" loading="lazy"></div><figcaption><b>Loading</b>The button becomes the loader, so nothing jumps.</figcaption></figure>
+        <figure class="ph"><div class="scr"><img src="img/luxury/app-error.webp" alt="App sign-in with a field error" loading="lazy"></div><figcaption><b>Field error</b>Inline, in plain words, right under the field.</figcaption></figure>
+        <figure class="ph"><div class="scr"><img src="img/luxury/app-error2.webp" alt="App sign-in with a form-level error" loading="lazy"></div><figcaption><b>Form error</b>"Invalid email or password" without saying which, for security.</figcaption></figure>
+      </div>
+      <div class="decisions">
+        <div><span class="tag">Decision</span><h3>Modal or page, same form</h3><p>A modal keeps shoppers on the product they were looking at; the page serves people who start from the account menu. Both share one component.</p></div>
+        <div><span class="tag">Decision</span><h3>Errors planned up front</h3><p>General errors, details that don't match an account, API failures and validation positions were all designed before build, not patched after.</p></div>
+        <div><span class="tag">Decision</span><h3>Handover checklists</h3><p>Every flow shipped with a checklist of breakpoints, states and annotations, so developers didn't have to guess.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SYSTEM -->
+  <section id="system" class="alt">
+    <div class="wrap">
+      <div class="eyebrow">Design system</div>
+      <h2 style="margin-top:16px;max-width:22ch">Upgrading a <em>legacy</em> design system</h2>
+      <p class="lede" style="margin-top:16px">The goal was to bring an ageing component library up to date for both web and app. I audited where web and app used similar components that could be merged, built foundational components first and then integrated ones, and documented every component down to its anatomy.</p>
+      <div class="principles" style="grid-template-columns:repeat(3,1fr);margin-top:40px">
+        <div style="border-color:var(--line)"><h3>1 · Audit web and app</h3><p style="color:var(--muted)">Found the gaps and duplicates across platforms, and showed how much work a shared system would save.</p></div>
+        <div style="border-color:var(--line)"><h3>2 · Foundations first</h3><p style="color:var(--muted)">Built base components (accordions, alerts, badges, cards, chips, dialogs and more) before integrated patterns.</p></div>
+        <div style="border-color:var(--line)"><h3>3 · Document for developers</h3><p style="color:var(--muted)">Variants and anatomy for every component, plus project covers and annotation kits for Confluence and Jira.</p></div>
+      </div>
+      <figure class="slide"><img src="img/luxury/ds-components.webp" alt="Dev-ready component library: foundational components first, then integrated components" loading="lazy" width="1250" height="891"></figure>
+      <p class="cap">Dev-ready components: the foundational layer set the stage for integrated and native app components.</p>
+    </div>
+  </section>
+
+  <!-- OUTCOMES -->
+  <section id="outcomes">
+    <div class="wrap two">
+      <div class="stack">
+        <div class="eyebrow">Outcomes</div>
+        <h2>What <em>changed</em></h2>
+        <p class="lede">UX optimisation across the portfolio, together with the shared design system, lifted client sales year on year.</p>
+        <div class="outcomes" style="grid-template-columns:1fr 1fr">
+          <div><div class="n">+4%</div><p>client sales, every year</p></div>
+          <div><div class="n">4</div><p>breakpoints designed for every screen and state</p></div>
+          <div><div class="n">6</div><p>authentication flows, from browsing to account deletion</p></div>
+          <div><div class="n">12</div><p>retail and travel sites reviewed for the new header</p></div>
+        </div>
+      </div>
+      <div class="stack">
+        <div class="eyebrow">What I learned</div>
+        <div class="learn">
+          <p><b>Audit first, then design.</b> Starting from a heuristic review and live-site testing gave every sprint a clear "why", and made sign-off conversations about evidence instead of taste.</p>
+          <p><b>Design the unhappy paths.</b> Load errors, share failures and out-of-stock items are where a luxury experience feels cheap. Planning them per breakpoint saved rework in build.</p>
+          <p><b>A design system is a delivery tool.</b> Documenting anatomy and variants removed guesswork for developers and let new features ship looking like they belonged.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="end">
+  <div class="wrap">
+    <div class="eyebrow">Thank you</div>
+    <h2 style="margin-top:20px">Luxury is <em>in the details.</em></h2>
+    <p>Thanks to the client's product and engineering teams and my colleagues at Publicis Sapient.</p>
+    <div class="credits"><span>UX lead &amp; design · Subhash Kapoor</span><span>Agency · Publicis Sapient</span><span>Client name withheld · brand marks removed from screens</span></div>
+    <div class="back-row"><a class="btn dark" href="index.html#work"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 8H3M7 4L3 8l4 4"/></svg>Back to portfolio</a><a class="btn" href="index.html#contact">Get in touch</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.pill a[data-s]'));
+  var map={};links.forEach(function(a){map[a.dataset.s]=a});
+  var ids=['overview','audit','header','wishlist','auth','system','outcomes'];
+  if(!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;
+    var k=e.target.id;links.forEach(function(a){a.classList.toggle('on',a===map[k])});
+    var on=map[k];if(on&&matchMedia('(max-width:720px)').matches){var p=on.parentNode;p.scrollLeft=on.offsetLeft-16}
+  })},{rootMargin:'-45% 0px -50% 0px'});
+  ids.forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)});
+})();
+</script>
+</body>
+</html>
