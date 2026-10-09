@@ -315,6 +315,13 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;paddin
 
 /* ---------- responsive ---------- */
 @media (max-width:1080px){
+  .work-list{flex-direction:column;height:auto}
+  .case{flex:none!important;height:64px;transition:height .6s cubic-bezier(.7,0,.2,1)}
+  .case.open{height:auto}
+  .case .spine{flex-direction:row;padding:0 18px}
+  .case .spine span{writing-mode:horizontal-tb;transform:none}
+  .case .inner{position:relative;grid-template-columns:1fr;display:none}
+  .case.open .inner{display:grid}
   .about-grid{grid-template-columns:1fr 1fr}
   .about-grid .facts-col{grid-column:1/-1}
   .ptable-wrap{grid-template-columns:1fr}
@@ -326,13 +333,6 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;paddin
   .pillars{grid-template-columns:1fr}
   .p-say{min-height:0}
   .domains{grid-template-columns:1fr;gap:16px}
-  .work-list{flex-direction:column;height:auto}
-  .case{flex:none!important;height:64px;transition:height .6s cubic-bezier(.7,0,.2,1)}
-  .case.open{height:auto}
-  .case .spine{flex-direction:row;padding:0 18px}
-  .case .spine span{writing-mode:horizontal-tb;transform:none}
-  .case .inner{position:relative;grid-template-columns:1fr;display:none}
-  .case.open .inner{display:grid}
   .stage{min-height:260px}
   .stat,.stat.wide{grid-column:span 6}
 }

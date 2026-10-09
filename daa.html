@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="Case study: designing the Dar Al Arkan Online property app for Saudi Arabia. Search, map and listings for buyers and renters, plus a lead and listing workspace for owners, brokers, developers and agents, in English and Arabic.">
+  <style>html{color-scheme:light}body{margin:0}img{max-width:100%}</style>
+  <title>Dar Al Arkan Case Study · Subhash Kapoor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="sukoon.css">
+  <style>
+    /* Dar Al Arkan additions on top of the shared case-study styles */
+    .fan::before{content:"ARKAN"}
+    .personas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:48px}
+    .persona{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:24px;min-width:0}
+    .persona .who{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+    .persona .who span{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+    .persona blockquote{margin:14px 0 0;font-family:var(--f-serif);font-style:italic;font-size:1.35rem;line-height:1.3}
+    .persona dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:18px 0 0}
+    .persona dt{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+    .persona dd{margin:6px 0 0;font-size:14px;color:var(--muted)}
+    .sitemap{margin:48px 0 0;border-radius:var(--r-md);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)}
+    .sitemap img{display:block;width:100%;height:auto}
+    .sitemap-cap{font-size:14px;color:var(--muted);margin-top:12px}
+    .roles{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+    .rtl-label{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;color:var(--accent)}
+    @media (max-width:720px){.personas{grid-template-columns:1fr}.persona dl{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="mark" href="index.html" aria-label="Back to portfolio">SK</a>
+  <nav class="pill" aria-label="Case study sections">
+    <a href="index.html#work" class="back">&larr; Portfolio</a>
+    <a href="#overview" data-s="overview">Overview</a>
+    <a href="#challenge" data-s="challenge">Challenge</a>
+    <a href="#research" data-s="research">Research</a>
+    <a href="#flows" data-s="flows">Key flows</a>
+    <a href="#system" data-s="system">Design system</a>
+    <a href="#outcomes" data-s="outcomes">Outcomes</a>
+  </nav>
+</header>
+
+<main id="main">
+  <header class="sk-hero">
+    <div class="wrap">
+      <div>
+        <div class="brandmark"><img src="img/daa/d01.webp" alt="Dar Al Arkan splash screen" width="40" height="40" style="object-fit:cover"><span>Dar Al Arkan Online · KSA · iOS &amp; Android</span></div>
+        <h1>Saudi property, <em>one app for everyone.</em></h1>
+        <p class="lede">Designing Dar Al Arkan Online: a property app where buyers and renters search, compare and enquire, and where owners, brokers, developers and agents list homes and follow up on leads. In English and Arabic.</p>
+        <div class="hero-meta">
+          <span class="chip">Mobile app · 0→1</span><span class="chip">5 user roles</span><span class="chip">English + Arabic (RTL)</span><span class="chip">136 screens</span>
+        </div>
+      </div>
+      <div class="fan" aria-label="Three key screens">
+        <figure class="ph"><div class="scr"><img src="img/daa/d06.webp" alt="Home: search, For Sale / For Rent / International tabs and property cards"></div></figure>
+        <figure class="ph"><div class="scr"><img src="img/daa/d14.webp" alt="Property detail with images, video and 360 view"></div></figure>
+        <figure class="ph"><div class="scr"><img src="img/daa/d17.webp" alt="Owner dashboard with property and user reports"></div></figure>
+      </div>
+    </div>
+  </header>
+
+  <!-- OVERVIEW -->
+  <section id="overview">
+    <div class="wrap two">
+      <div class="stack">
+        <div class="eyebrow">Overview</div>
+        <h2>One developer, many audiences, and a market that <em>runs on trust.</em></h2>
+      </div>
+      <div class="stack">
+        <p class="lede">Dar Al Arkan, through Thimar Al Arabiya, wanted to grow as a real estate provider in Saudi Arabia with its own online platform: web, mobile and a CRM, delivered in phases.</p>
+        <p>The mobile app had to serve two very different groups from one front door. End users want to find a home without visiting twenty of them. Owners, brokers, developers and agents want to list properties, see who is interested and act on those leads quickly, often from a car between viewings.</p>
+        <div class="roles"><span class="chip">Buyers &amp; renters</span><span class="chip">Property owners</span><span class="chip">Brokers</span><span class="chip">Developers</span><span class="chip">Agents</span></div>
+      </div>
+    </div>
+    <div class="wrap">
+      <dl class="snap">
+        <div><dt>My role</dt><dd>UX &amp; UI design</dd></div>
+        <div><dt>Client</dt><dd>Dar Al Arkan Online</dd></div>
+        <div><dt>Market</dt><dd>Saudi Arabia + international listings</dd></div>
+        <div><dt>Platform</dt><dd>iOS &amp; Android, English &amp; Arabic</dd></div>
+        <div><dt>Scope</dt><dd>136 screens across 5 user roles</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- CHALLENGE -->
+  <section id="challenge" class="alt">
+    <div class="wrap two">
+      <div class="stack">
+        <div class="eyebrow">The challenge</div>
+        <h2>Big decisions, <em>low trust,</em> and two languages.</h2>
+        <p class="lede">A home is the largest purchase most families make. People told us they worried about fraudulent sellers, hidden fees and photos that don't match reality, and professionals told us their tools were scattered.</p>
+      </div>
+      <div class="pains">
+        <div class="pain"><span class="k">A</span><div><h3>Search forms that ask everything at once</h3><p>Regional portals open with ten filters before you've typed a city. Our review found that a simple start, with detail added step by step, felt far better.</p></div></div>
+        <div class="pain"><span class="k">B</span><div><h3>Listings people couldn't trust</h3><p>Buyers wanted verified photos and video, real amenities and nearby schools and hospitals before they'd book a viewing.</p></div></div>
+        <div class="pain"><span class="k">C</span><div><h3>Leads spread across phone, WhatsApp and spreadsheets</h3><p>Brokers and agents had no single place to see who called, who messaged and which listing they asked about.</p></div></div>
+        <div class="pain"><span class="k">D</span><div><h3>English and Arabic, on any connection</h3><p>Every screen had to flip cleanly from left-to-right to right-to-left, and stay light for mobile users on slow networks.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <div class="wrap">
+      <div class="eyebrow">Research</div>
+      <h2 style="margin-top:16px;max-width:22ch">Five personas, seven competitors, <em>one clear pattern</em></h2>
+      <p class="lede" style="margin-top:16px">We started with stakeholder questions about goals, users and what success looks like, then built personas for buyers, renters, owners, sellers and brokers, and reviewed seven property portals in the region.</p>
+      <div class="personas">
+        <div class="persona">
+          <div class="who"><h3>Abdul Razak</h3><span>Buyer · Jeddah</span></div>
+          <blockquote>"I am looking for a bigger home with a large backyard, in a community."</blockquote>
+          <dl>
+            <div><dt>Needs</dt><dd>Space for three kids and his parents; close to good schools, hospitals and parks; a safe community.</dd></div>
+            <div><dt>Worries</dt><dd>Fraudulent sellers, hidden charges, and paperwork. Wants verified photos and video before visiting.</dd></div>
+          </dl>
+        </div>
+        <div class="persona">
+          <div class="who"><h3>Syed Umar</h3><span>Broker · Riyadh</span></div>
+          <blockquote>"I help people find the homes of their dreams."</blockquote>
+          <dl>
+            <div><dt>Needs</dt><dd>One tool to manage his time, clients and business goals, and stand out from other brokers.</dd></div>
+            <div><dt>Worries</dt><dd>Finding profitable clients, slow property matching, and no single place for legal, paperwork and mortgage needs.</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSIGHTS -->
+  <section id="principles" class="band">
+    <div class="wrap">
+      <div class="eyebrow">What research told us</div>
+      <h2 style="margin-top:16px;max-width:20ch">Four rules every screen <em>had to pass</em></h2>
+      <div class="principles">
+        <div><h3>Start simple, refine later</h3><p>One search bar and three tabs (For Sale, For Rent, International). Detailed filters live in a sheet you open when you need them.</p></div>
+        <div><h3>Show the real thing</h3><p>Every listing leads with photos, video and a 360 view, plus amenities, so people can shortlist from the sofa.</p></div>
+        <div><h3>Contact in one tap</h3><p>Call and WhatsApp sit on every property card. That's how people in the Kingdom already reach a seller.</p></div>
+        <div><h3>Pros work on the go</h3><p>Leads, reports, agents and listings fit in a phone-sized dashboard, built for a broker between viewings.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="wrap">
+      <div class="eyebrow">Process</div>
+      <h2 style="margin-top:16px;max-width:22ch">From the brief to <em>136 screens</em> in two languages</h2>
+      <p class="lede" style="margin-top:16px">We followed a discover, define, develop rhythm, then designed the end-user app and the professional workspace side by side, so the two halves shared one system.</p>
+      <div class="tl" tabindex="0" aria-label="Project timeline">
+        <div><span class="t">Discover</span><h3>Brief &amp; scope</h3><p>Scope of work, stakeholder questions, success criteria per phase</p></div>
+        <div><span class="t">Research</span><h3>Competitor review</h3><p>Seven regional portals; search and filter patterns compared</p></div>
+        <div><span class="t">Define</span><h3>Personas</h3><p>Buyer, renter, owner, seller and broker, plus shared insights</p></div>
+        <div><span class="t">Develop</span><h3>Sitemap &amp; flows</h3><p>Admin and user sitemaps, flow charts, wireframes</p></div>
+        <div><span class="t">Design</span><h3>End-user app</h3><p>Onboarding, search, map, filters, property detail, interest</p></div>
+        <div><span class="t">Design</span><h3>Pro workspace</h3><p>Dashboard, reports, my list, agents, add property, documents</p></div>
+        <div class="hot"><span class="t">Localise</span><h3>Arabic version</h3><p>Mirrored RTL layouts for home, dashboard, agents and reports</p></div>
+        <div class="hot"><span class="t">Handoff</span><h3>Screen flows</h3><p>Every screen mapped into end-user and professional flows</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IA -->
+  <section id="structure" class="alt">
+    <div class="wrap">
+      <div class="eyebrow">Information architecture</div>
+      <h2 style="margin-top:16px;max-width:20ch">One app, <em>two workspaces</em></h2>
+      <p class="lede" style="margin-top:16px">The sitemap covered buy, rent, commercial, agents, services and resident logins. In the app it became a bottom bar for everyone, with a centre "+" that opens the professional tools once you register as a broker, owner, developer or agent.</p>
+      <figure class="sitemap"><img src="img/daa/sitemap.webp" alt="Sitemap for Dar Al Arkan Online covering buy, rent, find agents, commercial, home improvements, inspire, owner and resident logins" loading="lazy" width="1400" height="790"></figure>
+      <p class="sitemap-cap">Early sitemap: buy, rent, agents, commercial, services, and owner and resident dashboards.</p>
+      <div class="ia">
+        <div><h3>Discover <span>01</span></h3><ul><li>Search with history</li><li>For Sale / For Rent / International</li><li>Villa, house, commercial, building</li><li>Saudi and international picks</li></ul></div>
+        <div><h3>Map <span>02</span></h3><ul><li>Price pins by area</li><li>Swipeable cards over the map</li><li>Switch to list view</li></ul></div>
+        <div><h3>Interests <span>03</span></h3><ul><li>Saved properties</li><li>Registered interest</li><li>Messages with sellers</li></ul></div>
+        <div><h3>Pro workspace <span>04</span></h3><ul><li>Dashboard &amp; reports</li><li>My properties &amp; documents</li><li>My agents &amp; invitations</li><li>Leads &amp; notifications</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 1 -->
+  <section id="flows">
+    <div class="wrap">
+      <div class="chapter-head"><span class="chapter-num" aria-hidden="true">01</span>
+        <div class="stack"><div class="eyebrow">First launch</div><h2>Browse first, <em>register when it's worth it</em></h2>
+        <p class="lede">Anyone can search and browse without an account. The walkthrough speaks to both audiences, and registration asks one question first: are you a broker, an owner or a developer?</p></div></div>
+      <div class="rail-wrap rail" tabindex="0" aria-label="Onboarding screens">
+        <figure class="ph"><div class="scr"><img src="img/daa/d01.webp" alt="Splash" loading="lazy"></div><figcaption><b>Splash</b>Bilingual wordmark, nothing else.</figcaption></figure>
+        <figure class="ph"><div class="scr"><img src="img/daa/d02.webp" alt="Walkthrough: discover properties" loading="lazy"></div><figcaption><b>Discover properties</b>The promise for buyers and renters.</figcaption></figure>
+        <figure class="ph"><div class="scr"><img src="img/daa/d03.webp" alt="Walkthrough: add properties" loading="lazy"></div><figcaption><b>Add properties</b>The promise for owners and brokers.</figcaption></figure>
+        <figure class="ph"><div class="scr"><img src="img/daa/d04.webp" alt="Add your property become easy" loading="lazy"></div><figcaption><b>Professional entry</b>Login, or create an account to list.</figcaption></figure>
+        <figure class="ph"><div class="scr"><img src="img/daa/d05.webp" alt="Register with us as broker, owner or developer" loading="lazy"></div><figcaption><b>Choose your role</b>One choice shapes the whole workspace.</figcaption></figure>
+      </div>
+      <div class="decisions">
+        <div><span class="tag">Decision</span><h3>No login wall</h3><p>Search, map and property details work signed out. Sign-in only appears when you register interest or list a property.</p></div>
+        <div><span class="tag">Decision</span><h3>Role before form</h3><p>Picking broker, owner or developer first means each sign-up asks only for what that role needs.</p></div>
+        <div><span class="tag">Decision</span><h3>Two promises, two cards</h3><p>The walkthrough gives each audience its own card, so neither feels the app isn't for them.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 2 -->
+  <section id="search" class="alt">
+    <div class="wrap">
+      <div class="chapter-head"><span class="chapter-num" aria-hidden="true">02</span>
+        <div class="stack"><div class="eyebrow">Hero flow · Search</div><h2>A search bar and three tabs, <em>not ten dropdowns</em></h2>
+        <p class="lede">Research showed that long filter forms put people off. Home opens with one search bar, For Sale / For Rent / International tabs and four property types. Detailed filters sit in a sheet, and every applied filter shows as a removable chip.</p></div></div>
+      <div class="rail-wrap rail" tabindex="0" aria-label="Search and filter screens">
+        <figure class="ph"><div class="scr tall" tabindex="0"><img src="img/daa/d06.webp" alt="Home with search, tabs and property cards" loading="lazy"></div><figcaption><b>Home</b><span class="scrollhint">SCROLL INSIDE ↕</span> Tabs instead of a dropdown, as research suggested.</figcaption></figure>
+        <figure class="ph"><div class="scr"><img src="img/daa/d07.webp" alt="Search with recent cities" loading="lazy"></div><figcaption><b>Search</b>Recent cities first: Jeddah, Medina, Riyadh.</figcaption></figure>
+        <figure class="ph"><div class="scr tall" tabindex="0"><img src="img/daa/d11.webp" alt="Filter sheet for sale, residential" loading="lazy"></div><figcaption><b>Filter sheet</b><span class="scrollhint">SCROLL INSIDE ↕</span> Usage, type and bedrooms, opened only when needed.</figcaption></figure>
+        <figure class="ph"><div class="scr tall" tabindex="0"><img src="img/daa/d12.webp" alt="International filter with country and city" loading="lazy"></div><figcaption><b>International</b><span class="scrollhint">SCROLL INSIDE ↕</span> Adds country and city on top of the same filters.</figcaption></figure>
+        <figure class="ph"><div class="scr"><img src="img/daa/d13.webp" alt="Filtered results with chips" loading="lazy"></div><figcaption><b>Results</b>Each filter is a chip you can remove in one tap.</figcaption></figure>
+        <figure class="ph"><div class="scr"><img src="img/daa/d08.webp" alt="Search results list" loading="lazy"></div><figcaption><b>Result cards</b>Price, size, rooms, then Call and WhatsApp.</figcaption></figure>
+      </div>
+      <div class="decisions">
+        <div><span class="tag">Decision</span><h3>Tabs over dropdowns</h3><p>Buy, rent or international is the first thing people decide, so it's always visible rather than hidden in a menu.</p></div>
+        <div><span class="tag">Decision</span><h3>Chips show what's applied</h3><p>A row of filter chips under the search bar makes it obvious why you see 120 results, and how to widen them.</p></div>
+        <div><span class="tag">Decision</span><h3>Contact on the card</h3><p>Call and WhatsApp buttons on every card turn browsing into a conversation without opening the listing.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 3 -->
+  <section id="map">
+    <div class="wrap">
+      <div class="chapter-head"><span class="chapter-num" aria-hidden="true">03</span>
+        <div class="stack"><div class="eyebrow">Map</div><h2>Search by <em>neighbourhood,</em> not by street name</h2>
+        <p class="lede">For a buyer like Abdul, location comes first: near schools, hospitals and family. The map shows prices as pins, with swipeable cards along the bottom and a one-tap switch to a list.</p></div></div>
+      <div class="ba">
+        <figure class="ph"><div class="scr"><img src="img/daa/d09.webp" alt="Map view with price pins and property cards" loading="lazy"></div><figcaption><b>Map view</b>Price pins, category chips, and cards that follow the map.</figcaption></figure>
+        <figure class="ph"><div class="scr tall" tabindex="0"><img src="img/daa/d10.webp" alt="List view of the same area" loading="lazy"></div><figcaption><b>List view</b><span class="scrollhint">SCROLL INSIDE ↕</span> Same area and filters, as a list.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 4 -->
+  <section id="detail" class="alt">
+    <div class="wrap">
+      <div class="chapter-head"><span class="chapter-num" aria-hidden="true">04</span>
+        <div class="stack"><div class="eyebrow">Property detail</div><h2>See it properly <em>before you visit</em></h2>
+        <p class="lede">The detail page answers the questions from our personas: what it really looks like, what's included, and what's nearby. Images, video and a 360 view sit in the first screen, and registering interest takes three fields.</p></div></div>
+      <div class="rail-wrap rail" tabindex="0" aria-label="Property detail screens">
+        <figure class="ph"><div class="scr tall" tabindex="0"><img src="img/daa/d14.webp" alt="Property detail page" loading="lazy"></div><figcaption><b>Property detail</b><span class="scrollhint">SCROLL INSIDE ↕</span> Media tabs, price, size, amenities, location.</figcaption></figure>
+        <figure class="ph"><div class="scr"><img src="img/daa/d15.webp" alt="360 view with labelled hotspots" loading="lazy"></div><figcaption><b>360 view</b>Hotspots label features like the kitchen and air conditioning.</figcaption></figure>
+        <figure class="ph"><div class="scr"><img src="img/daa/d16.webp" alt="Register to interest sheet" loading="lazy"></div><figcaption><b>Register interest</b>Name, email, mobile with +966. That's it.</figcaption></figure>
+      </div>
+      <div class="decisions">
+        <div><span class="tag">Decision</span><h3>Media before price</h3><p>Photos, video and 360 view lead the page, because trust in the photos was the top worry in research.</p></div>
+        <div><span class="tag">Decision</span><h3>Interest, not a call</h3><p>Registering interest sends a lead to the seller's dashboard, so a buyer can enquire at midnight without a phone call.</p></div>
+        <div><span class="tag">Decision</span><h3>Report a listing</h3><p>A "Report property" link on every listing gives people a way to flag fakes, which helps the platform earn trust.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 5 -->
+  <section id="pro">
+    <div class="wrap">
+      <div class="chapter-head"><span class="chapter-num" aria-hidden="true">05</span>
+        <div class="stack"><div class="eyebrow">Pro workspace</div><h2>A broker's whole week, <em>in one dashboard</em></h2>
+        <p class="lede">For Syed and his peers, the app replaces the phone log and the spreadsheet. The dashboard shows active listings, visits, click-through and leads, and every call, WhatsApp message or registered interest lands as a notification.</p></div></div>
+      <div class="rail-wrap rail" tabindex="0" aria-label="Professional workspace screens">
+        <figure class="ph"><div class="scr tall" tabindex="0"><img src="img/daa/d17.webp" alt="Dashboard with property and user reports" loading="lazy"></div><figcaption><b>Dashboard</b><span class="scrollhint">SCROLL INSIDE ↕</span> Active vs inactive listings, CTR, CR, impressions, leads.</figcaption></figure>
+        <figure class="ph"><div class="scr tall" tabindex="0"><img src="img/daa/d18.webp" alt="Weekly reports chart" loading="lazy"></div><figcaption><b>Reports</b><span class="scrollhint">SCROLL INSIDE ↕</span> Impressions and visits by day, per property.</figcaption></figure>
+        <figure class="ph"><div class="scr tall" tabindex="0"><img src="img/daa/d21.webp" alt="My list with weekly statistics" loading="lazy"></div><figcaption><b>My list</b><span class="scrollhint">SCROLL INSIDE ↕</span> Visits, leads, calls and WhatsApp clicks, then every listing by status.</figcaption></figure>
+        <figure class="ph"><div class="scr tall" tabindex="0"><img src="img/daa/d22.webp" alt="Lead notifications" loading="lazy"></div><figcaption><b>Leads</b><span class="scrollhint">SCROLL INSIDE ↕</span> Interest, WhatsApp and calls, each tied to a property.</figcaption></figure>
+        <figure class="ph"><div class="scr"><img src="img/daa/d23.webp" alt="Messages inbox" loading="lazy"></div><figcaption><b>Messages</b>Inbox, sent and archived, with unread counts.</figcaption></figure>
+        <figure class="ph"><div class="scr tall" tabindex="0"><img src="img/daa/d19.webp" alt="My agents list" loading="lazy"></div><figcaption><b>My agents</b><span class="scrollhint">SCROLL INSIDE ↕</span> Status and permissions for each agent.</figcaption></figure>
+        <figure class="ph"><div class="scr"><img src="img/daa/d20.webp" alt="Invite an agent by email" loading="lazy"></div><figcaption><b>Invite an agent</b>One email field; the agent finishes their own sign-up.</figcaption></figure>
+      </div>
+      <div class="decisions">
+        <div><span class="tag">Decision</span><h3>Count what brokers care about</h3><p>Leads, calls and WhatsApp clicks sit next to views, so a broker can tell which listings actually make the phone ring.</p></div>
+        <div><span class="tag">Decision</span><h3>Permissions per agent</h3><p>Brokers and developers choose whether each agent can handle commercial, selling or renting, and can block access in one step.</p></div>
+        <div><span class="tag">Decision</span><h3>Every lead has a source</h3><p>Notifications name the property and the channel, so follow-up starts with context instead of "who is this?".</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 6 -->
+  <section id="listing" class="alt">
+    <div class="wrap">
+      <div class="chapter-head"><span class="chapter-num" aria-hidden="true">06</span>
+        <div class="stack"><div class="eyebrow">Add a property</div><h2>Nine short steps, or <em>one upload</em> for a whole portfolio</h2>
+        <p class="lede">Listing one property is a nine-step wizard with a visible counter and Save on every step. Developers with dozens of units can upload a document instead and track each file's review status.</p></div></div>
+      <div class="steps"><span><b>1</b>Basic info</span><span><b>2</b>Property info</span><span><b>3</b>Details</span><span><b>4</b>Documents</span><span><b>5</b>Floor plan</span><span><b>6</b>Media</span><span><b>7</b>Location</span><span><b>8</b>Key attributes</span><span><b>9</b>Completion</span></div>
+      <div class="rail-wrap rail" tabindex="0" aria-label="Add property screens">
+        <figure class="ph"><div class="scr"><img src="img/daa/d24.webp" alt="Add property: single or upload documents" loading="lazy"></div><figcaption><b>Two ways in</b>One property, or upload documents in bulk.</figcaption></figure>
+        <figure class="ph"><div class="scr"><img src="img/daa/d25.webp" alt="Step 1 basic information" loading="lazy"></div><figcaption><b>1 · Basic information</b>Country, type and admin; "1/9" in the button.</figcaption></figure>
+        <figure class="ph"><div class="scr"><img src="img/daa/d26.webp" alt="Step 6 upload property media" loading="lazy"></div><figcaption><b>6 · Media</b>Gallery, video link and 360 link, ready for the detail page.</figcaption></figure>
+        <figure class="ph"><div class="scr tall" tabindex="0"><img src="img/daa/d27.webp" alt="Step 7 property location" loading="lazy"></div><figcaption><b>7 · Location</b><span class="scrollhint">SCROLL INSIDE ↕</span> Detect my location, or drop a pin.</figcaption></figure>
+        <figure class="ph"><div class="scr"><img src="img/daa/d28.webp" alt="Upload success" loading="lazy"></div><figcaption><b>Done</b>Success, with a direct link to My list.</figcaption></figure>
+        <figure class="ph"><div class="scr tall" tabindex="0"><img src="img/daa/d29.webp" alt="Manage documents with status" loading="lazy"></div><figcaption><b>Bulk documents</b><span class="scrollhint">SCROLL INSIDE ↕</span> Each file shows Completed or Pending.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARABIC -->
+  <section id="arabic">
+    <div class="wrap">
+      <div class="chapter-head"><span class="chapter-num" aria-hidden="true">07</span>
+        <div class="stack"><div class="eyebrow">Arabic version</div><h2>Mirrored, <em>not just translated</em></h2>
+        <p class="lede">The layouts were built so they could flip from left-to-right to right-to-left without redesign. Navigation, tabs, carousels, charts and back arrows all mirror, while numbers and prices keep their usual reading order.</p></div></div>
+      <div class="ba">
+        <figure class="ph"><div class="scr tall" tabindex="0"><img src="img/daa/d30.webp" alt="Arabic home screen, right-to-left" loading="lazy"></div><figcaption><b>الرئيسية · Home</b><span class="scrollhint">SCROLL INSIDE ↕</span> Tabs, categories and cards read right to left.</figcaption></figure>
+        <figure class="ph"><div class="scr tall" tabindex="0"><img src="img/daa/d31.webp" alt="Arabic dashboard, right-to-left" loading="lazy"></div><figcaption><b>لوحة التحكم · Dashboard</b><span class="scrollhint">SCROLL INSIDE ↕</span> Reports and dials mirror; figures stay legible.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- SYSTEM -->
+  <section id="system" class="alt">
+    <div class="wrap">
+      <div class="eyebrow">Design language</div>
+      <h2 style="margin-top:16px;max-width:20ch">One deep plum, <em>photos do the rest</em></h2>
+      <p class="lede" style="margin-top:16px">A clean, light layout kept the code simple, the app fast on slow networks and the focus on the property photos, which Dar Al Arkan controls end to end.</p>
+      <div class="swatches">
+        <div class="sw"><i style="background:#521C78"></i><div>Arkan Plum<code>#521C78 · primary</code></div></div>
+        <div class="sw"><i style="background:#F1F1F9"></i><div>Mist<code>#F1F1F9 · surfaces</code></div></div>
+        <div class="sw"><i style="background:#FFFFFF;box-shadow:inset 0 0 0 1px var(--line)"></i><div>White<code>#FFFFFF · cards</code></div></div>
+        <div class="sw"><i style="background:#25D366"></i><div>WhatsApp Green<code>#25D366 · contact only</code></div></div>
+        <div class="sw"><i style="background:#1A1A1A"></i><div>Ink<code>#1A1A1A · text</code></div></div>
+      </div>
+      <div class="comps">
+        <div><h3>Property card</h3><p>Photo, save heart, price, type, address, size, bedrooms and bathrooms, then Call and WhatsApp. The same card appears on home, search, map and lists.</p></div>
+        <div><h3>Filter sheet + chips</h3><p>A bottom sheet with tabs for sale, rent and international, and chips under the search bar for whatever's applied.</p></div>
+        <div><h3>Centre "+" action</h3><p>A raised plum button in the tab bar. For professionals it adds a property; for everyone else it leads to registration.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTCOMES -->
+  <section id="outcomes">
+    <div class="wrap two">
+      <div class="stack">
+        <div class="eyebrow">Outcomes</div>
+        <h2>What we <em>delivered</em></h2>
+        <p class="lede">A complete, bilingual app design for both sides of the market, mapped screen by screen into flows for handoff.</p>
+        <div class="outcomes" style="grid-template-columns:1fr 1fr">
+          <div><div class="n">136</div><p>screens across end-user and professional flows</p></div>
+          <div><div class="n">5</div><p>user roles served from one app and one design system</p></div>
+          <div><div class="n">2</div><p>languages, English and Arabic, with full right-to-left layouts</p></div>
+          <div><div class="n">7</div><p>regional property portals reviewed before the first wireframe</p></div>
+        </div>
+      </div>
+      <div class="stack">
+        <div class="eyebrow">What I learned</div>
+        <div class="learn">
+          <p><b>Design for both sides of the transaction.</b> A buyer's "register interest" is only useful if it lands as a clear lead for the seller. Designing both ends together kept the two halves of the app consistent.</p>
+          <p><b>Plan for RTL from the first wireframe.</b> Because the layouts were built to mirror from the start, the Arabic version was a set of careful checks rather than a redesign.</p>
+          <p><b>Competitor reviews earn their keep.</b> Seven portals showed the same overloaded search form. That gave the team a shared reason to start simple.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="end">
+  <div class="wrap">
+    <div class="eyebrow">Thank you</div>
+    <h2 style="margin-top:20px">Find it, <em>then call.</em></h2>
+    <p>Thanks to the Dar Al Arkan Online team and everyone who joined the research.</p>
+    <div class="credits"><span>UX &amp; UI · Subhash Kapoor</span><span>Client · Dar Al Arkan Online</span><span>Screens shown are design files with sample data</span></div>
+    <div class="back-row"><a class="btn dark" href="index.html#work"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 8H3M7 4L3 8l4 4"/></svg>Back to portfolio</a><a class="btn" href="index.html#contact">Get in touch</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.pill a[data-s]'));
+  var map={};links.forEach(function(a){map[a.dataset.s]=a});
+  var ids=['overview','challenge','research','principles','process','structure','flows','search','map','detail','pro','listing','arabic','system','outcomes'];
+  var group={principles:'research',process:'research',structure:'research',search:'flows',map:'flows',detail:'flows',pro:'flows',listing:'flows',arabic:'flows'};
+  if(!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;
+    var k=group[e.target.id]||e.target.id;links.forEach(function(a){a.classList.toggle('on',a===map[k])});
+    var on=map[k];if(on&&on.scrollIntoView&&matchMedia('(max-width:720px)').matches){var p=on.parentNode;p.scrollLeft=on.offsetLeft-16}
+  })},{rootMargin:'-45% 0px -50% 0px'});
+  ids.forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)});
+})();
+</script>
+</body>
+</html>
