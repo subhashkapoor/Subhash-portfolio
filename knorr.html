@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="Case study: redesigning the Knorr US website for Unilever. A brand refresh, a social-first homepage and recipe page, and a digital design toolkit, designed at Publicis Sapient.">
+  <style>html{color-scheme:light}body{margin:0}img{max-width:100%}</style>
+  <title>Knorr US Case Study · Subhash Kapoor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="sukoon.css">
+  <style>
+    /* Knorr additions on top of the shared case-study styles */
+    .fan::before{content:"KNORR"}
+    .hero-shot{margin:0;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line)}
+    .hero-shot img{display:block;width:100%;height:auto}
+    .browser{margin:0;display:flex;flex-direction:column;gap:12px;min-width:0}
+    .browser .win{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#fff;box-shadow:var(--shadow)}
+    .browser .bar{display:flex;align-items:center;gap:6px;height:30px;padding:0 12px;background:#EDEAE3;border-bottom:1px solid var(--line)}
+    .browser .bar i{width:9px;height:9px;border-radius:50%;background:#D3CDC1}
+    .browser .bar span{margin-left:10px;font-family:var(--f-mono);font-size:10px;color:var(--muted)}
+    .browser .view{height:min(70vh,620px);overflow-y:auto;scrollbar-width:thin}
+    .browser .view img{display:block;width:100%;height:auto}
+    .browser figcaption{font-size:14px;color:var(--muted)}
+    .browser figcaption b{display:block;color:var(--ink);font-weight:700;font-size:15px;margin-bottom:2px}
+    .duo{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:32px;margin-top:48px;align-items:start}
+    .duo .ph{max-width:272px;justify-self:center;width:100%}
+    .slide{margin:48px 0 0;border-radius:var(--r-md);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)}
+    .slide img{display:block;width:100%;height:auto}
+    .slides2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:48px}
+    .slides2 .slide{margin:0}
+    .cap{font-size:14px;color:var(--muted);margin-top:10px}
+    .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:40px}
+    .stats>div{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:24px}
+    .stats .n{font-size:clamp(36px,5vw,56px);font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--accent)}
+    .stats p{font-size:14px;color:var(--muted);margin-top:8px}
+    .zones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:48px}
+    .zones>div{border-radius:var(--r-md);padding:24px;color:#FFFFF7}
+    .zones .z1{background:#01331A}.zones .z2{background:#007932}.zones .z3{background:#4C8C00}
+    .zones span{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#FFB200}
+    .zones h3{color:#FFFFF7;margin-top:8px}
+    .zones p{color:rgba(255,255,247,.8);font-size:14px;margin-top:8px}
+    .zones ul{margin:12px 0 0;padding-left:18px;font-size:14px;color:rgba(255,255,247,.86);display:grid;gap:4px}
+    .social-strip{margin:48px 0 0;border-radius:var(--r-md);overflow:hidden;box-shadow:var(--shadow);overflow-x:auto;scrollbar-width:thin}
+    .social-strip img{display:block;height:260px;width:auto;max-width:none}
+    @media (max-width:860px){.duo,.slides2,.stats,.zones{grid-template-columns:1fr}.browser .view{height:520px}}
+  </style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="mark" href="index.html" aria-label="Back to portfolio">SK</a>
+  <nav class="pill" aria-label="Case study sections">
+    <a href="index.html#work" class="back">&larr; Portfolio</a>
+    <a href="#overview" data-s="overview">Overview</a>
+    <a href="#discovery" data-s="discovery">Discovery</a>
+    <a href="#home" data-s="home">Homepage</a>
+    <a href="#recipe" data-s="recipe">Recipe page</a>
+    <a href="#system" data-s="system">Design system</a>
+    <a href="#outcomes" data-s="outcomes">Outcomes</a>
+  </nav>
+</header>
+
+<main id="main">
+  <header class="sk-hero">
+    <div class="wrap">
+      <div>
+        <div class="brandmark"><img src="img/knorr/brand.webp" alt="Knorr brand assets" width="40" height="40" style="object-fit:cover;object-position:8% 80%"><span>Unilever · Knorr US · Publicis Sapient · 2025</span></div>
+        <h1>A 187-year-old brand, <em>made for the feed.</em></h1>
+        <p class="lede">Redesigning knorr.com/us for Knorr's new, younger brand identity: a reskin of every component, a new homepage and recipe page, and social content built into the site instead of bolted on.</p>
+        <div class="hero-meta">
+          <span class="chip">Website redesign</span><span class="chip">Social-first</span><span class="chip">Desktop + mobile</span><span class="chip">Launched Dec 2025</span>
+        </div>
+      </div>
+      <div class="fan" aria-label="Three key screens">
+        <figure class="ph"><div class="scr"><img src="img/knorr/m-home.webp" alt="Knorr US homepage on mobile"></div></figure>
+        <figure class="ph"><div class="scr"><img src="img/knorr/m-recipe.webp" alt="Knorr US recipe page on mobile"></div></figure>
+        <figure class="ph"><div class="scr"><img src="img/knorr/m-product.webp" alt="Knorr US product page on mobile"></div></figure>
+      </div>
+    </div>
+  </header>
+
+  <!-- OVERVIEW -->
+  <section id="overview">
+    <div class="wrap two">
+      <div class="stack">
+        <div class="eyebrow">Overview</div>
+        <h2>The brand got younger. <em>The website hadn't.</em></h2>
+      </div>
+      <div class="stack">
+        <p class="lede">Knorr had just launched a bolder, more youthful identity: a new wordmark, the "living leaf", warm lifestyle photography and a bright palette. The US website still looked and worked like the old brand.</p>
+        <p>The brief had three parts: reskin every component to the new identity, completely redesign the two pages that matter most (the homepage and the recipe page), and build in a social-first approach, because so much of Knorr's traffic arrives from social media on a phone.</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <figure class="hero-shot" style="margin-top:56px"><img src="img/knorr/hero.webp" alt="New Knorr US homepage hero: Introducing new Knorr flavor bases" width="1400" height="739"></figure>
+      <dl class="snap">
+        <div><dt>My role</dt><dd>UX &amp; UI design (hands-on)</dd></div>
+        <div><dt>Client</dt><dd>Unilever · Knorr US</dd></div>
+        <div><dt>Agency</dt><dd>Publicis Sapient</dd></div>
+        <div><dt>Platform</dt><dd>Responsive web, desktop &amp; mobile</dd></div>
+        <div><dt>Timeline</dt><dd>Aug–Dec 2025, live in December</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- DISCOVERY -->
+  <section id="discovery" class="alt">
+    <div class="wrap">
+      <div class="eyebrow">Discovery</div>
+      <h2 style="margin-top:16px;max-width:22ch">Fix the cracks <em>before painting the wall</em></h2>
+      <p class="lede" style="margin-top:16px">Before designing anything, I reviewed the existing site, its information architecture and its analytics, and studied the best recipe sites in the US. The goal was to know what to fix as well as what to restyle.</p>
+      <div class="stats">
+        <div><div class="n">90+</div><p>products (82 unique) to present and connect to recipes</p></div>
+        <div><div class="n">630+</div><p>recipes, the main reason people visit</p></div>
+        <div><div class="n">40+</div><p>articles that were hard to find</p></div>
+      </div>
+    </div>
+    <div class="wrap two" style="margin-top:56px">
+      <div class="pains">
+        <div class="pain"><span class="k">A</span><div><h3>Search moved around</h3><p>Search sat in different places on different templates, so people who wanted a recipe fast had to hunt for it.</p></div></div>
+        <div class="pain"><span class="k">B</span><div><h3>Recipes and products didn't meet</h3><p>A recipe used Knorr Chicken Bouillon, but the page barely mentioned it, so the site was missing its strongest purchase moment.</p></div></div>
+        <div class="pain"><span class="k">C</span><div><h3>Articles and the recipe builder were buried</h3><p>Useful content existed but navigation didn't lead to it.</p></div></div>
+      </div>
+      <div class="pains">
+        <div class="pain"><span class="k">D</span><div><h3>Mostly new visitors, mostly on phones</h3><p>Most traffic came from first-time visitors on mobile, many arriving from a social post straight onto a single recipe.</p></div></div>
+        <div class="pain"><span class="k">E</span><div><h3>Heavy pages</h3><p>Large images and code made pages feel slow on phones, which matters most for people arriving from social.</p></div></div>
+        <div class="pain"><span class="k">F</span><div><h3>Room to keep people browsing</h3><p>Too many visits ended after one recipe. The site needed clear next steps.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPETITORS -->
+  <section id="principles" class="band">
+    <div class="wrap">
+      <div class="eyebrow">Competitor review</div>
+      <h2 style="margin-top:16px;max-width:22ch">What the best recipe sites <em>do differently</em></h2>
+      <p class="lede" style="margin-top:16px;color:color-mix(in srgb,var(--on-ink) 70%,transparent)">I reviewed eight US recipe and meal-kit sites, including NYT Cooking, Serious Eats, America's Test Kitchen, HelloFresh, Blue Apron and King Arthur Baking, alongside Maggi and Mindful Chef. Three patterns stood out.</p>
+      <div class="principles" style="grid-template-columns:repeat(3,1fr)">
+        <div><h3>Clean, purposeful design</h3><p>Clutter-free layouts, generous white space and full-bleed, warm food photography that makes a recipe look worth cooking.</p></div>
+        <div><h3>Guided, hands-free cooking</h3><p>A step-by-step cook mode with large type and simple navigation, so you can follow along with messy hands.</p></div>
+        <div><h3>Smarter recipe discovery</h3><p>Visual ingredient lists and quick filters like "30 minutes or less" or "vegan" to find the right dish fast.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOMEPAGE -->
+  <section id="home">
+    <div class="wrap">
+      <div class="chapter-head"><span class="chapter-num" aria-hidden="true">01</span>
+        <div class="stack"><div class="eyebrow">Homepage</div><h2>Inspire, engage, <em>then earn trust</em></h2>
+        <p class="lede">I structured the homepage in three bands, each with its own job. That gave every module a reason to exist and made it easy to decide what to cut.</p></div></div>
+      <div class="zones">
+        <div class="z1"><span>Above the fold</span><h3>Inspire + guide</h3><p>A campaign hero and what's new, so returning fans see something fresh.</p><ul><li>Full-bleed campaign hero</li><li>What's new carousel</li></ul></div>
+        <div class="z2"><span>Mid-page</span><h3>Engage + explore</h3><p>The recipes people came for, with quick filters, then the product range.</p><ul><li>Most popular recipes + filter chips</li><li>Explore our range with ratings</li></ul></div>
+        <div class="z3"><span>Lower page</span><h3>Trust + extend</h3><p>Real people cooking with Knorr, and articles that keep you on the site.</p><ul><li>Join the Knorr community (UGC)</li><li>Articles carousel</li></ul></div>
+      </div>
+      <div class="duo">
+        <figure class="browser"><div class="win"><div class="bar"><i></i><i></i><i></i><span>knorr.com/us · Home</span></div><div class="view" tabindex="0"><img src="img/knorr/home.webp" alt="Full new Knorr US homepage on desktop" loading="lazy"></div></div><figcaption><b>Homepage · desktop</b>Scroll inside the window to see the full page.</figcaption></figure>
+        <figure class="ph"><div class="scr tall" tabindex="0"><img src="img/knorr/m-home.webp" alt="Knorr US homepage on mobile" loading="lazy"></div><figcaption><b>Homepage · mobile</b><span class="scrollhint">SCROLL INSIDE ↕</span> Most visitors see this version.</figcaption></figure>
+      </div>
+      <div class="decisions">
+        <div><span class="tag">Decision</span><h3>Recipes before products</h3><p>Popular recipes come first, because recipes bring people to the site. Products follow, shown in the context of what you'd cook with them.</p></div>
+        <div><span class="tag">Decision</span><h3>Filters as chips</h3><p>Vegan, plant-based, gluten-free and 30-minute chips sit right above the recipe grid, taken from the discovery patterns in the competitor review.</p></div>
+        <div><span class="tag">Decision</span><h3>Community on the homepage</h3><p>Creators' videos sit beside Knorr's own content, so the site feels like the social channels people arrive from.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECIPE -->
+  <section id="recipe" class="alt">
+    <div class="wrap">
+      <div class="chapter-head"><span class="chapter-num" aria-hidden="true">02</span>
+        <div class="stack"><div class="eyebrow">Recipe page</div><h2>The page that does <em>most of the work</em></h2>
+        <p class="lede">Most visitors land straight on a recipe from search or social. So the recipe page has to cook well, sell the product and give people a reason to stay, in that order.</p></div></div>
+      <div class="duo">
+        <figure class="browser"><div class="win"><div class="bar"><i></i><i></i><i></i><span>knorr.com/us · Recipe</span></div><div class="view" tabindex="0"><img src="img/knorr/recipe.webp" alt="New Knorr US recipe page on desktop" loading="lazy"></div></div><figcaption><b>Recipe page · desktop</b>Ingredients, steps, product, community, related recipes, FAQs, reviews.</figcaption></figure>
+        <figure class="ph"><div class="scr tall" tabindex="0"><img src="img/knorr/m-recipe.webp" alt="Knorr US recipe page on mobile" loading="lazy"></div><figcaption><b>Recipe page · mobile</b><span class="scrollhint">SCROLL INSIDE ↕</span> Time, servings and ingredients up front.</figcaption></figure>
+      </div>
+      <div class="slides2">
+        <div><figure class="slide"><img src="img/knorr/product-hero.webp" alt="Before and after: product hidden at the bottom of the old recipe page, now a hero product block" loading="lazy"></figure><p class="cap">Moving the product from the bottom of the page into a hero block, supporting the brand KPI of purchase intent.</p></div>
+        <div><figure class="slide"><img src="img/knorr/product-card.webp" alt="Existing product card next to the new lifestyle product card" loading="lazy"></figure><p class="cap">Product cards with in-situ lifestyle shots and a simple interaction. Publicis Media research shows in-situ product shots increase engagement.</p></div>
+      </div>
+      <div class="decisions">
+        <div><span class="tag">Decision</span><h3>"What you'll need" is the product</h3><p>The Knorr product used in the recipe gets its own block with rating and "Where to buy", right after the method.</p></div>
+        <div><span class="tag">Decision</span><h3>Get ingredients online</h3><p>Retailer buttons next to the ingredient list turn "I'll make this" into a basket, without leaving the recipe.</p></div>
+        <div><span class="tag">Decision</span><h3>"Made this recipe?"</h3><p>A prompt to add your own photo and review closes the loop with social, and gives the next visitor real proof.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL -->
+  <section id="social">
+    <div class="wrap">
+      <div class="chapter-head"><span class="chapter-num" aria-hidden="true">03</span>
+        <div class="stack"><div class="eyebrow">Social-first</div><h2>Social as a <em>design principle,</em> not a widget</h2>
+        <p class="lede">Instead of embedding a feed in the footer, I designed social into the moments where it helps: sharing a recipe, sharing the dish you made, seeing others cook with Knorr, and later, shopping straight from the feed.</p></div></div>
+      <figure class="social-strip" tabindex="0" aria-label="Social-first concepts, scroll sideways"><img src="img/knorr/social.webp" alt="Social as a design principle: share recipes, share dish photo, user-generated content, future shop the feed" width="2400" height="262" loading="lazy"></figure>
+      <p class="cap">Share recipes · Share your dish photo · Community content (UGC) · Future: shop the feed</p>
+    </div>
+  </section>
+
+  <!-- MORE TEMPLATES -->
+  <section id="templates" class="alt">
+    <div class="wrap">
+      <div class="chapter-head"><span class="chapter-num" aria-hidden="true">04</span>
+        <div class="stack"><div class="eyebrow">Every other page</div><h2>One reskin, <em>eleven templates</em></h2>
+        <p class="lede">With the two key pages set, the new language rolled out across the rest of the site: product pages, recipe and product categories, search, articles, experts, FAQs and sign-up, on desktop and mobile.</p></div></div>
+      <div class="rail-wrap rail" tabindex="0" aria-label="Reskinned templates" style="grid-auto-columns:minmax(260px,320px)">
+        <figure class="browser"><div class="win"><div class="bar"><i></i><i></i><i></i><span>Product</span></div><div class="view" tabindex="0" style="height:460px"><img src="img/knorr/product.webp" alt="Knorr product detail page" loading="lazy"></div></div><figcaption><b>Product detail</b>Ratings, nutrition, where to buy and recipes that use it.</figcaption></figure>
+        <figure class="browser"><div class="win"><div class="bar"><i></i><i></i><i></i><span>Recipes</span></div><div class="view" tabindex="0" style="height:460px"><img src="img/knorr/recipe-category.webp" alt="Knorr recipe category page" loading="lazy"></div></div><figcaption><b>Recipe category</b>Filter chips and a grid that scales to 630+ recipes.</figcaption></figure>
+        <figure class="browser"><div class="win"><div class="bar"><i></i><i></i><i></i><span>All products</span></div><div class="view" tabindex="0" style="height:460px"><img src="img/knorr/all-products.webp" alt="Knorr all products page" loading="lazy"></div></div><figcaption><b>All products</b>The range grouped by type, each with a lifestyle card.</figcaption></figure>
+        <figure class="browser"><div class="win"><div class="bar"><i></i><i></i><i></i><span>Search</span></div><div class="view" tabindex="0" style="height:460px"><img src="img/knorr/search.webp" alt="Knorr search results page" loading="lazy"></div></div><figcaption><b>Search results</b>Recipes, products and articles in one place.</figcaption></figure>
+        <figure class="ph" style="max-width:240px"><div class="scr tall" tabindex="0"><img src="img/knorr/m-product.webp" alt="Knorr product page on mobile" loading="lazy"></div><figcaption><b>Product · mobile</b><span class="scrollhint">SCROLL INSIDE ↕</span> Buy now stays in reach.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- SYSTEM -->
+  <section id="system">
+    <div class="wrap">
+      <div class="eyebrow">Digital design toolkit</div>
+      <h2 style="margin-top:16px;max-width:22ch">47 components, 11 templates, <em>one shared system</em></h2>
+      <p class="lede" style="margin-top:16px">I audited every component and template on the site, from accordions and nutrient tables to forms and Bazaarvoice reviews, so nothing was missed in the reskin. Then I started a foundational design system that other Knorr markets can reuse.</p>
+      <div class="slides2">
+        <div><figure class="slide"><img src="img/knorr/components.webp" alt="Component and template review: 47 components, 11 unique templates" loading="lazy"></figure><p class="cap">Component and template audit: what each one does and where it's used.</p></div>
+        <div><figure class="slide"><img src="img/knorr/type-scale.webp" alt="Type scale exploration at 1.200, 1.333 and 1.414 ratios" loading="lazy"></figure><p class="cap">A type scale defined mathematically (comparing 1.2, 1.333 and 1.414 ratios), with web-standard H1–H6 labels for developers.</p></div>
+      </div>
+      <div class="swatches">
+        <div class="sw"><i style="background:#007932"></i><div>Knorr Green<code>#007932 · primary</code></div></div>
+        <div class="sw"><i style="background:#01331A"></i><div>Deep Green<code>#01331A · backgrounds</code></div></div>
+        <div class="sw"><i style="background:#54A701"></i><div>Leaf Green<code>#54A701 · accents</code></div></div>
+        <div class="sw"><i style="background:#FFB200"></i><div>Sunshine<code>#FFB200 · headlines</code></div></div>
+        <div class="sw"><i style="background:#CD005D"></i><div>Berry<code>#CD005D · community</code></div></div>
+        <div class="sw"><i style="background:#FE3102"></i><div>Tomato<code>#FE3102 · highlights</code></div></div>
+        <div class="sw"><i style="background:#FFFFF7;box-shadow:inset 0 0 0 1px var(--line)"></i><div>Cream<code>#FFFFF7 · surfaces</code></div></div>
+      </div>
+      <div class="comps">
+        <div><h3>Type scale &amp; tokens</h3><p>An expressive display face from the new brand, set on a mathematical scale, with colour and spacing tokens named for developers.</p></div>
+        <div><h3>Lifestyle product card</h3><p>Product shot plus an in-situ lifestyle image, rating and "Buy now", reused on the homepage, product pages and recipes.</p></div>
+        <div><h3>Patterned sections</h3><p>The brand's wave pattern and colour bands separate homepage zones without extra dividers or chrome.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTCOMES -->
+  <section id="outcomes" class="alt">
+    <div class="wrap two">
+      <div class="stack">
+        <div class="eyebrow">Outcomes</div>
+        <h2>What <em>shipped</em></h2>
+        <p class="lede">The redesigned Knorr US site went live in December 2025, after design sprints, a component reskin in two batches, build sprints and two rounds of UAT.</p>
+        <div class="outcomes" style="grid-template-columns:1fr 1fr">
+          <div><div class="n">2</div><p>key pages fully redesigned: homepage and recipe page</p></div>
+          <div><div class="n">47</div><p>components reskinned to the new brand identity</p></div>
+          <div><div class="n">11</div><p>unique templates reviewed and rolled out</p></div>
+          <div><div class="n">~20</div><p>weeks from kickoff to launch</p></div>
+        </div>
+      </div>
+      <div class="stack">
+        <div class="eyebrow">What I learned</div>
+        <div class="learn">
+          <p><b>Audit before you reskin.</b> Reviewing all 47 components first meant the visual refresh also fixed real problems, like search placement and buried articles, instead of repainting them.</p>
+          <p><b>Design for where people arrive.</b> Most visitors land on one recipe from a social post on a phone. Designing that page first, for mobile, shaped every other decision.</p>
+          <p><b>Make the product part of the story.</b> Putting the Knorr product inside the recipe, not in a footer carousel, served both the cook and the brand's purchase-intent KPI.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="end">
+  <div class="wrap">
+    <div class="eyebrow">Thank you</div>
+    <h2 style="margin-top:20px">Because nothing beats <em>home cooked.</em></h2>
+    <p>Thanks to the Knorr and Unilever teams, and my colleagues at Publicis Sapient.</p>
+    <div class="credits"><span>UX &amp; UI · Subhash Kapoor</span><span>Client · Unilever, Knorr US</span><span>Agency · Publicis Sapient</span></div>
+    <div class="back-row"><a class="btn dark" href="index.html#work"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 8H3M7 4L3 8l4 4"/></svg>Back to portfolio</a><a class="btn" href="index.html#contact">Get in touch</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.pill a[data-s]'));
+  var map={};links.forEach(function(a){map[a.dataset.s]=a});
+  var ids=['overview','discovery','principles','home','recipe','social','templates','system','outcomes'];
+  var group={principles:'discovery',social:'recipe',templates:'recipe'};
+  if(!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;
+    var k=group[e.target.id]||e.target.id;links.forEach(function(a){a.classList.toggle('on',a===map[k])});
+    var on=map[k];if(on&&on.scrollIntoView&&matchMedia('(max-width:720px)').matches){var p=on.parentNode;p.scrollLeft=on.offsetLeft-16}
+  })},{rootMargin:'-45% 0px -50% 0px'});
+  ids.forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)});
+})();
+</script>
+</body>
+</html>

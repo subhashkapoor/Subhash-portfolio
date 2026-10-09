@@ -183,8 +183,8 @@ section{position:relative;padding-block:clamp(72px,10vw,128px)}
 .detail p{color:var(--muted);font-size:14px;margin:12px 0 0}
 
 /* ---------- work (accordion) ---------- */
-.work-list{display:flex;gap:10px;height:clamp(460px,52vw,560px)}
-.case{position:relative;flex:0 0 76px;border-radius:22px;background:var(--surface);border:1px solid var(--line);overflow:hidden;cursor:pointer;transition:flex .7s cubic-bezier(.7,0,.2,1),box-shadow .4s;min-width:0}
+.work-list{display:flex;gap:8px;height:clamp(500px,50vw,620px)}
+.case{position:relative;flex:0 0 62px;border-radius:22px;background:var(--surface);border:1px solid var(--line);overflow:hidden;cursor:pointer;transition:flex .7s cubic-bezier(.7,0,.2,1),box-shadow .4s;min-width:0}
 .case.open{flex:1 1 auto;cursor:default;box-shadow:var(--shadow)}
 .case .spine{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:22px 0;transition:opacity .3s}
 .case .spine span{writing-mode:vertical-rl;transform:rotate(180deg);font-weight:700;font-size:17px;letter-spacing:-.01em;white-space:nowrap}
@@ -240,10 +240,10 @@ section{position:relative;padding-block:clamp(72px,10vw,128px)}
 /* case with link-out (Sukoon) */
 .cs-link{margin-top:22px}
 .stage.phones{gap:0;align-items:flex-end;padding-bottom:0}
-.stage.phones .phone{display:block;width:min(34%,150px);border:5px solid #1A1F31;border-bottom:0;border-radius:22px 22px 0 0;overflow:hidden;background:#fff;box-shadow:var(--shadow);align-self:flex-end;margin:0 -4px;transform:translateY(14px) rotate(-3deg);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
-.stage.phones .phone.mid{transform:translateY(34px) rotate(3deg);width:min(36%,160px)}
+.stage.phones .phone{display:block;width:min(44%,180px);border:5px solid #1A1F31;border-bottom:0;border-radius:22px 22px 0 0;overflow:hidden;background:#fff;box-shadow:var(--shadow);align-self:flex-end;margin:0 -4px;transform:translateY(14px) rotate(-3deg);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.stage.phones .phone.mid{transform:translateY(34px) rotate(3deg);width:min(46%,190px)}
 .stage.phones .phone:hover{transform:translateY(0) rotate(0)}
-.stage.phones .phone img{display:block;width:100%;height:auto}
+.stage.phones .phone img{display:block;width:100%;height:auto;aspect-ratio:393/800;object-fit:cover;object-position:top}
 .stage.phones{max-height:100%}
 
 /* ---------- timeline ---------- */
