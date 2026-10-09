@@ -181,19 +181,80 @@
     show(first, [...pt.children].indexOf(first));
   }));
 
-  /* work accordion + dials */
-  const cases = [...document.querySelectorAll('.case')];
-  const R = 2 * Math.PI * 34;
-  const setDial = (c, on) => {
-    const v = c.querySelector('.vl'); v.style.strokeDasharray = R;
-    v.style.strokeDashoffset = on ? R * (1 - (+c.dataset.pct / +c.dataset.max)) : R;
-  };
-  const open = c => { cases.forEach(x => { x.classList.toggle('open', x === c); setDial(x, x === c); x.setAttribute('aria-expanded', x === c); }); };
-  cases.forEach(c => {
-    c.addEventListener('click', () => { if (!c.classList.contains('open')) open(c); });
-    c.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(c); } });
-  });
-  cases.forEach(c => setDial(c, c.classList.contains('open')));
+  /* work reel: vertical scroll drives horizontal slides */
+  const reel = document.getElementById('reel');
+  if (reel) {
+    const track = document.getElementById('reelTrack'), slides = [...reel.querySelectorAll('.slide')], n = slides.length;
+    const btns = [...reel.querySelectorAll('.reel-nav button')], now = document.getElementById('reelNow'), ui = reel.querySelector('.reel-ui');
+    const flat = matchMedia('(max-width: 860px), (prefers-reduced-motion: reduce)');
+    let active = -1, ticking = false;
+    const span = () => reel.offsetHeight - innerHeight;
+    const render = () => {
+      ticking = false;
+      if (flat.matches) { track.style.transform = ''; slides.forEach(s => s.style.removeProperty('--d')); return; }
+      const p = Math.min(1, Math.max(0, -reel.getBoundingClientRect().top / span()));
+      const x = p * (n - 1);
+      track.style.transform = `translate3d(${-x * 100}vw,0,0)`;
+      slides.forEach((s, k) => s.style.setProperty('--d', (k - x).toFixed(3)));
+      btns.forEach((b, k) => b.style.setProperty('--f', Math.min(1, Math.max(0, x - k + 1)).toFixed(3)));
+      const i = Math.round(x);
+      if (i !== active) {
+        active = i;
+        btns.forEach((b, k) => { b.classList.toggle('on', k === i); b.setAttribute('aria-current', k === i ? 'true' : 'false'); });
+        now.textContent = String(i + 1).padStart(2, '0');
+        ui.style.setProperty('--ui', getComputedStyle(slides[i]).getPropertyValue('--fg'));
+      }
+    };
+    const topOf = i => reel.getBoundingClientRect().top + scrollY + span() * i / (n - 1);
+    // one gesture = one project: glide to the slide, then wait for trackpad inertia to settle
+    let busy = false, lastInput = 0;
+    const ease = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    const go = i => {
+      i = Math.max(0, Math.min(n - 1, i));
+      const from = scrollY, to = topOf(i);
+      if (reduce) { scrollTo({ top: to, behavior: 'instant' }); return; }
+      busy = true;
+      const t0 = performance.now(), dur = 750;
+      const step = t => {
+        const k = Math.min(1, (t - t0) / dur);
+        scrollTo({ top: from + (to - from) * ease(k), behavior: 'instant' });
+        if (k < 1) return requestAnimationFrame(step);
+        const settle = () => (performance.now() - lastInput > 160 ? (busy = false) : setTimeout(settle, 60));
+        setTimeout(settle, 120);
+      };
+      requestAnimationFrame(step);
+    };
+    const pinned = () => { const r = reel.getBoundingClientRect(); return r.top <= 1 && r.bottom >= innerHeight - 1; };
+    const current = () => Math.round(Math.min(1, Math.max(0, -reel.getBoundingClientRect().top / span())) * (n - 1));
+    const stepBy = (dir, e) => {
+      if (flat.matches || !pinned()) return;
+      const i = current();
+      if ((dir > 0 && i >= n - 1) || (dir < 0 && i <= 0)) return; // let the page carry on at either end
+      e.preventDefault();
+      lastInput = performance.now();
+      if (!busy) go(i + dir);
+    };
+    addEventListener('wheel', e => { if (Math.abs(e.deltaY) > 2) stepBy(Math.sign(e.deltaY), e); }, { passive: false });
+    addEventListener('keydown', e => {
+      if (e.target.closest('input,textarea,select')) return;
+      const k = e.key, dir = (k === 'ArrowDown' || k === 'PageDown' || (k === ' ' && !e.shiftKey)) ? 1 : (k === 'ArrowUp' || k === 'PageUp' || (k === ' ' && e.shiftKey)) ? -1 : 0;
+      if (dir) stepBy(dir, e);
+    });
+    let ty = null;
+    addEventListener('touchstart', e => { ty = e.touches[0].clientY; }, { passive: true });
+    addEventListener('touchmove', e => {
+      if (ty === null) return;
+      const dy = ty - e.touches[0].clientY;
+      if (Math.abs(dy) > 30) { stepBy(Math.sign(dy), e); if (busy) ty = null; }
+      else if (!flat.matches && pinned()) { const i = current(); if (!((dy > 0 && i >= n - 1) || (dy < 0 && i <= 0))) e.preventDefault(); }
+    }, { passive: false });
+    btns.forEach((b, i) => b.addEventListener('click', () => go(i)));
+    slides.forEach((s, i) => s.addEventListener('focusin', () => { if (!flat.matches && i !== active) go(i); }));
+    addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(render); } }, { passive: true });
+    addEventListener('resize', render);
+    flat.addEventListener('change', render);
+    render();
+  }
 
   /* timeline progress */
   const tl = document.getElementById('tl'), fill = document.getElementById('tlFill');
