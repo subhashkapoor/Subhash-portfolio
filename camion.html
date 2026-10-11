@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="Case study: designing Camion, a Dubai trucking marketplace for shippers, transporters and drivers, on web and mobile.">
+  <style>html{color-scheme:light}body{margin:0}img{max-width:100%}</style>
+  <title>Camion Logistics Case Study · Subhash Kapoor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="sukoon.css">
+  <style>
+    .fan::before{content:"CAMION"}
+    /* Showcase intro (project-title style) */
+    .showcase{position:relative;overflow:hidden;background:#F7F6F3;color:#1A1F31;padding-block:clamp(64px,8vw,104px) clamp(120px,12vw,170px)}
+    .showcase .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px;align-items:center;position:relative;z-index:1}
+    .showcase .rings{position:absolute;left:38%;top:50%;width:900px;height:900px;transform:translate(-50%,-50%);border-radius:50%;
+      background:repeating-radial-gradient(circle,transparent 0 70px,rgba(26,31,49,.045) 70px 118px);pointer-events:none}
+    .showcase .arc{position:absolute;left:-110px;bottom:-150px;width:250px;height:250px;border-radius:50%;background:#2E9B3E;box-shadow:0 0 0 34px #F28C28;pointer-events:none}
+    .showcase .num{position:absolute;left:22px;bottom:12px;font-size:48px;font-weight:300;color:rgba(255,255,255,.28);letter-spacing:-.02em;z-index:1}
+    .showcase .kicker{font-family:var(--f-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#5B7360}
+    .showcase h2{font-size:clamp(34px,4.4vw,56px);font-weight:700;color:#2E9B3E;letter-spacing:-.03em;line-height:1.05;margin-top:14px}
+    .showcase .sum{font-size:17px;line-height:1.6;color:#4A4A55;margin-top:20px;max-width:46ch}
+    .showcase .meta{display:grid;gap:18px;margin-top:32px}
+    .showcase .meta>div{display:flex;gap:16px;align-items:center}
+    .showcase .meta .ic{width:48px;height:48px;flex:none;border-radius:50%;border:1.5px solid #2E9B3E;display:grid;place-items:center;color:#2E9B3E}
+    .showcase .meta .ic svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .showcase .meta b{display:block;font-size:17px;color:#2E9B3E;font-weight:600}
+    .showcase .meta span{font-size:15px;color:#4A4A55}
+    .collage{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;height:620px;margin-right:calc(-1 * var(--gutter) - 60px)}
+    .collage .col{display:flex;flex-direction:column;gap:22px}
+    .collage .col:nth-child(1){padding-top:110px}
+    .collage .col:nth-child(2){margin-top:-150px}
+    .collage .col:nth-child(3){padding-top:40px}
+    .collage .pf{border:7px solid #111;border-radius:34px;overflow:hidden;background:#111;box-shadow:0 24px 50px -24px rgba(26,31,49,.55);aspect-ratio:393/820;flex:none}
+    .collage .pf img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+    @media (max-width:860px){.showcase .wrap{grid-template-columns:1fr}.collage{height:460px;margin-right:calc(-1 * var(--gutter) - 40px)}}
+    .webs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin-top:48px}
+    .web{margin:0;display:flex;flex-direction:column;gap:12px;min-width:0}
+    .web .win{border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:#111}
+    .web .win img{display:block;width:100%;height:auto}
+    .web .win.tall{max-height:min(70vh,620px);overflow-y:auto;scrollbar-width:thin}
+    .ph-web{display:none}
+    .web figcaption{font-size:14px;color:var(--muted)}
+    .web figcaption b{display:block;color:var(--ink);font-weight:700;font-size:15px;margin-bottom:2px}
+    .roles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:48px}
+    .roles>div{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:22px;min-width:0}
+    .roles span{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+    .roles h3{margin-top:8px}.roles p{font-size:14px;color:var(--muted);margin-top:8px}
+    @media (max-width:860px){.webs,.roles{grid-template-columns:1fr}}
+  </style>
+  <style>
+    .ph-box{margin-top:40px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .ph-box>div{border:2px dashed var(--line);border-radius:var(--r-md);padding:24px;background:var(--surface)}
+    .ph-box .n{font-size:clamp(34px,4vw,48px);font-weight:800;letter-spacing:-.04em;color:var(--accent)}
+    .ph-box p{font-size:14px;color:var(--muted);margin-top:6px}
+    .todo{display:inline-block;font-family:var(--f-mono);font-size:10px;letter-spacing:.1em;padding:3px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin-left:8px;vertical-align:middle}
+    @media (max-width:860px){.ph-box{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="mark" href="index.html" aria-label="Back to portfolio">SK</a>
+  <nav class="pill" aria-label="Case study sections"><a href="index.html#work" class="back">&larr; Portfolio</a><a href="#overview" data-s="overview">Overview</a><a href="#challenge" data-s="challenge">Challenge</a><a href="#shipper" data-s="shipper">Shipper</a><a href="#transporter" data-s="transporter">Transporter</a><a href="#driver" data-s="driver">Driver</a><a href="#outcomes" data-s="outcomes">Outcomes</a></nav>
+</header>
+<main id="main">
+  <header class="sk-hero">
+    <div class="wrap">
+      <div>
+        <div class="brandmark"><span>Camion · Dubai, UAE · Web &amp; mobile</span></div>
+        <h1>Book a truck <em>like a taxi.</em></h1>
+        <p class="lede">Leading the entire design initiative for Camion, a Dubai trucking marketplace: one platform where shippers post loads, transporters bid and manage fleets, and drivers run every trip from their phone.</p>
+        <div class="hero-meta"><span class="chip">Design lead</span><span class="chip">3 connected apps</span><span class="chip">Web + mobile</span><span class="chip">Launched</span></div>
+      </div>
+      <div class="fan" aria-label="Three key screens"><figure class="ph"><div class="scr"><img src="img/camion/m-sdash.webp" alt="Shipper home"></div></figure><figure class="ph"><div class="scr"><img src="img/camion/m-tdash.webp" alt="Transporter home"></div></figure><figure class="ph"><div class="scr"><img src="img/camion/m-dotp.webp" alt="Driver trip start"></div></figure></div>
+    </div>
+  </header>
+  
+  <section class="showcase" aria-label="Project summary">
+    <div class="rings" aria-hidden="true"></div><div class="arc" aria-hidden="true"></div><span class="num" aria-hidden="true">07</span>
+    <div class="wrap">
+      <div>
+        <div class="kicker">Project 07 · Logistics · Dubai, UAE</div>
+        <h2>Camion trucking marketplace</h2>
+        <p class="sum">A marketplace that connects the three people behind every shipment: the shipper who needs a truck, the transporter who owns it and the driver who drives it.</p>
+        <div class="meta"><div><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg></span><div><b>My role</b><span>Led the entire design initiative</span></div></div><div><span class="ic"><svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span><div><b>Platforms</b><span>Web portal · iOS &amp; Android</span></div></div><div><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span><div><b>Scope</b><span>Shipper, transporter and driver apps</span></div></div></div>
+      </div>
+      <div class="collage" aria-hidden="true"><div class="col"><div class="pf"><img src="img/camion/m-sdash.webp" alt=""></div></div><div class="col"><div class="pf"><img src="img/camion/m-strip.webp" alt=""></div><div class="pf"><img src="img/camion/m-tdash.webp" alt=""></div></div><div class="col"><div class="pf"><img src="img/camion/m-ttrip.webp" alt=""></div><div class="pf"><img src="img/camion/m-signin.webp" alt=""></div></div></div>
+    </div>
+  </section>
+  <section id="overview">
+    <div class="wrap two">
+      <div class="stack"><div class="eyebrow">Overview</div><h2>Trucking in the UAE <em>ran on phone calls.</em></h2></div>
+      <div class="stack"><p class="lede">Booking a truck meant calling around, negotiating price by phone and chasing drivers for updates. Camion wanted to turn that into a marketplace with live bids, tracking and proof of delivery.</p><p>I led design end to end: mapping the shipper and transporter workflows, designing the web portal and the mobile apps, and building the component library they share.</p></div>
+    </div>
+    <div class="wrap">
+      <div class="roles"><div><span>Shippers</span><h3>Post a load</h3><p>Choose a truck, set pickup and drop, get bids.</p></div><div><span>Transporters</span><h3>Win and run work</h3><p>Bid on loads, manage vehicles, drivers and rate cards.</p></div><div><span>Drivers</span><h3>Drive the trip</h3><p>Start with an OTP, navigate, confirm delivery.</p></div><div><span>Operations</span><h3>Keep it moving</h3><p>Notifications, support and credits across roles.</p></div></div>
+      <dl class="snap"><div><dt>My role</dt><dd>Design lead</dd></div><div><dt>Client</dt><dd>Camion, Dubai</dd></div><div><dt>Apps</dt><dd>Shipper, transporter, driver</dd></div><div><dt>Platforms</dt><dd>Web &amp; mobile</dd></div><div><dt>Status</dt><dd>Launched</dd></div></dl>
+    </div>
+  </section>
+  <section id="challenge" class="alt">
+    <div class="wrap two">
+      <div class="stack"><div class="eyebrow">The challenge</div><h2>Three users, <em>one shipment.</em></h2><p class="lede">A shipper, a transporter and a driver all touch the same trip, but each needs a different tool. Every status change had to reach the right person at the right time.</p></div>
+      <div class="pains"><div class="pain"><span class="k">A</span><div><h3>Price by negotiation</h3><p>Shippers called several transporters to compare quotes.</p></div></div><div class="pain"><span class="k">B</span><div><h3>No visibility after booking</h3><p>Nobody knew where the truck was until it arrived.</p></div></div><div class="pain"><span class="k">C</span><div><h3>Fleets on spreadsheets</h3><p>Transporters tracked vehicles, drivers and rate cards by hand.</p></div></div><div class="pain"><span class="k">D</span><div><h3>Paper proof of delivery</h3><p>PODs were photos on WhatsApp, easy to lose.</p></div></div></div>
+    </div>
+  </section>
+  <section id="principles" class="band">
+    <div class="wrap">
+      <div class="eyebrow">Principles</div>
+      <h2 style="margin-top:16px;max-width:22ch">Designing a <em>three-sided marketplace</em></h2>
+      <p class="lede" style="margin-top:16px;color:color-mix(in srgb,var(--on-ink) 70%,transparent)">We mapped the shipper and transporter workflows step by step (onboarding, post load, bids, credits, support, notifications) before designing a single screen.</p>
+      <div class="principles"><div><h3>One trip, one status</h3><p>Every app shows the same trip state, from bid to delivered.</p></div><div><h3>Bids, not phone calls</h3><p>Shippers post once and compare offers side by side.</p></div><div><h3>Big targets for drivers</h3><p>Driver screens are built for gloves, sunlight and one hand.</p></div><div><h3>Arabic-ready, mobile-first</h3><p>Layouts and icons that work across the region.</p></div></div>
+      
+    </div>
+  </section>
+  <section id="shipper">
+    <div class="wrap">
+      <div class="chapter-head"><span class="chapter-num" aria-hidden="true">01</span>
+        <div class="stack"><div class="eyebrow">Shipper</div><h2>Post a load <em>in under a minute</em></h2>
+        <p class="lede">Shippers pick a truck type, set the number of trucks, goods and packaging, then add pickup and drop. Instant booking is there for urgent loads.</p></div></div>
+      <div class="webs"><figure class="web"><div class="win" ><img src="img/camion/w-post.webp" alt="Book a truck on web" loading="lazy"></div><figcaption><b>Book a truck · web</b>FTL, LTL or instant booking, with consignor and consignee on the map.</figcaption></figure><div class="rail-wrap rail" tabindex="0" aria-label="Shipper screens" style="margin-top:0"><figure class="ph"><div class="scr tall" tabindex="0"><img src="img/camion/m-sdash.webp" alt="Shipper home" loading="lazy"></div><figcaption><b>Shipper home</b><span class="scrollhint">SCROLL INSIDE ↕</span> Schedule, bids, shipments and instant truck.</figcaption></figure><figure class="ph"><div class="scr tall" tabindex="0"><img src="img/camion/m-strip.webp" alt="Choose vehicle type" loading="lazy"></div><figcaption><b>Choose a truck</b><span class="scrollhint">SCROLL INSIDE ↕</span> Visual truck types, then goods and packaging.</figcaption></figure></div></div><div class="decisions"><div><span class="tag">Decision</span><h3>Trucks you can see</h3><p>Illustrated truck types replace jargon, so shippers pick the right size first time.</p></div><div><span class="tag">Decision</span><h3>Instant booking</h3><p>Urgent loads skip bidding and go straight to the nearest available truck.</p></div><div><span class="tag">Decision</span><h3>Bids side by side</h3><p>Offers arrive as cards with rating, price and vehicle.</p></div></div>
+    </div>
+  </section>
+  <section id="transporter" class="alt">
+    <div class="wrap">
+      <div class="chapter-head"><span class="chapter-num" aria-hidden="true">02</span>
+        <div class="stack"><div class="eyebrow">Transporter</div><h2>Run a fleet <em>from one dashboard</em></h2>
+        <p class="lede">Transporters see active trips, utilisation and profit at a glance, bid on open loads, and manage vehicles, drivers and rate cards, on the web portal or the app.</p></div></div>
+      <div class="webs"><figure class="web"><div class="win" ><img src="img/camion/w-dash.webp" alt="Transporter dashboard" loading="lazy"></div><figcaption><b>Dashboard</b>Driving now, live trips, top shipments and vehicle utilisation.</figcaption></figure><figure class="web"><div class="win" ><img src="img/camion/w-map.webp" alt="Fleet map" loading="lazy"></div><figcaption><b>Fleet map</b>Every truck on one map.</figcaption></figure><figure class="web"><div class="win" ><img src="img/camion/w-bids.webp" alt="Place a bid" loading="lazy"></div><figcaption><b>Place a bid</b>One field and one button over the load list.</figcaption></figure><div class="rail-wrap rail" tabindex="0" aria-label="Transporter screens" style="margin-top:0"><figure class="ph"><div class="scr tall" tabindex="0"><img src="img/camion/m-tdash.webp" alt="Transporter app home" loading="lazy"></div><figcaption><b>App home</b><span class="scrollhint">SCROLL INSIDE ↕</span> Vehicles, load spaces, shipments and bids.</figcaption></figure><figure class="ph"><div class="scr tall" tabindex="0"><img src="img/camion/m-ttrip.webp" alt="Active trip with timeline" loading="lazy"></div><figcaption><b>Active trip</b><span class="scrollhint">SCROLL INSIDE ↕</span> A live timeline from confirmed to trip end.</figcaption></figure></div></div><div class="decisions"><div><span class="tag">Decision</span><h3>Utilisation first</h3><p>Idle trucks cost money, so utilisation leads the dashboard.</p></div><div><span class="tag">Decision</span><h3>Bidding in one step</h3><p>A modal over the load list keeps context while bidding.</p></div><div><span class="tag">Decision</span><h3>Live trip timeline</h3><p>Each stage, from pickup to unloading, updates as the driver moves.</p></div></div>
+    </div>
+  </section>
+  <section id="driver">
+    <div class="wrap">
+      <div class="chapter-head"><span class="chapter-num" aria-hidden="true">03</span>
+        <div class="stack"><div class="eyebrow">Driver</div><h2>A trip app built for <em>the cab of a truck</em></h2>
+        <p class="lede">Drivers sign in, receive trips, start each one with an OTP from the customer and follow the route, with notifications for every change.</p></div></div>
+      <div class="rail-wrap rail" tabindex="0" aria-label="Driver screens"><figure class="ph"><div class="scr" ><img src="img/camion/m-signin.webp" alt="Driver sign in" loading="lazy"></div><figcaption><b>Sign in</b>Simple, large and familiar.</figcaption></figure><figure class="ph"><div class="scr" ><img src="img/camion/m-dotp.webp" alt="Enter OTP to start trip" loading="lazy"></div><figcaption><b>Start with OTP</b>The customer shares a code to start the trip.</figcaption></figure></div><div class="decisions"><div><span class="tag">Decision</span><h3>OTP to start</h3><p>A code from the customer confirms the right truck is at the right place.</p></div><div><span class="tag">Decision</span><h3>Large tap targets</h3><p>Buttons sized for gloves and a moving cab.</p></div><div><span class="tag">Decision</span><h3>Proof on the phone</h3><p>Delivery is confirmed in-app, and the POD is shared automatically.</p></div></div>
+    </div>
+  </section>
+
+  <section id="outcomes">
+    <div class="wrap two">
+      <div class="stack">
+        <div class="eyebrow">Outcomes</div>
+        <h2>What <em>shipped</em></h2>
+        <p class="lede">Camion launched as one marketplace with three connected apps, so every shipment is visible to everyone involved, from bid to delivery.</p>
+        <div class="outcomes" style="grid-template-columns:1fr 1fr"><div><div class="n">3</div><p>connected apps: shipper, transporter, driver</p></div><div><div class="n">2</div><p>platforms: web portal and mobile</p></div><div><div class="n">1</div><p>shared component library</p></div><div><div class="n">−40%</div><p>time to book a truck (illustrative)</p></div></div>
+      </div>
+      <div class="stack"><div class="eyebrow">What I learned</div><div class="learn"><p><b>Map the workflow before the screens.</b> Writing out every shipper and transporter step exposed hand-offs that later became notifications.</p><p><b>Design for the hardest context.</b> The driver app set the bar for clarity across the whole product.</p><p><b>One status language.</b> Using the same trip states in every app removed most support questions.</p></div></div>
+    </div>
+  </section>
+</main>
+<footer class="end">
+  <div class="wrap">
+    <div class="eyebrow">Thank you</div>
+    <h2 style="margin-top:20px">Keep on <em>trucking.</em></h2>
+    <p>Thanks to the Camion team in Dubai.</p>
+    <div class="credits"><span>Design lead · Subhash Kapoor</span><span>Client · Camion, Dubai</span></div>
+    <div class="back-row"><a class="btn dark" href="index.html#work"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 8H3M7 4L3 8l4 4"/></svg>Back to portfolio</a><a class="btn" href="index.html#contact">Get in touch</a></div>
+  </div>
+</footer>
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.pill a[data-s]'));
+  var map={};links.forEach(function(a){map[a.dataset.s]=a});
+  var ids=['overview', 'challenge', 'shipper', 'transporter', 'driver', 'outcomes', 'principles'];
+  var group={principles:'challenge'};
+  if(!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;
+    var k=group[e.target.id]||e.target.id;links.forEach(function(a){a.classList.toggle('on',a===map[k])});
+    var on=map[k];if(on&&matchMedia('(max-width:720px)').matches){var p=on.parentNode;p.scrollLeft=on.offsetLeft-16}
+  })},{rootMargin:'-45% 0px -50% 0px'});
+  ids.forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)});
+})();
+</script>
+</body>
+</html>

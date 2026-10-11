@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="Case study: Empower, a gamified employee engagement platform for HERE Technologies, with a race theme, quizzes, polls, journeys and rewards.">
+  <style>html{color-scheme:light}body{margin:0}img{max-width:100%}</style>
+  <title>Empower Case Study · Subhash Kapoor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="sukoon.css">
+  <style>
+    .fan::before{content:"EMPOWER"}
+    /* Showcase intro (project-title style) */
+    .showcase{position:relative;overflow:hidden;background:#F7F6F3;color:#1A1F31;padding-block:clamp(64px,8vw,104px) clamp(120px,12vw,170px)}
+    .showcase .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px;align-items:center;position:relative;z-index:1}
+    .showcase .rings{position:absolute;left:38%;top:50%;width:900px;height:900px;transform:translate(-50%,-50%);border-radius:50%;
+      background:repeating-radial-gradient(circle,transparent 0 70px,rgba(26,31,49,.045) 70px 118px);pointer-events:none}
+    .showcase .arc{position:absolute;left:-110px;bottom:-150px;width:250px;height:250px;border-radius:50%;background:#2B2470;box-shadow:0 0 0 34px #F5C518;pointer-events:none}
+    .showcase .num{position:absolute;left:22px;bottom:12px;font-size:48px;font-weight:300;color:rgba(255,255,255,.28);letter-spacing:-.02em;z-index:1}
+    .showcase .kicker{font-family:var(--f-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#5E5A86}
+    .showcase h2{font-size:clamp(34px,4.4vw,56px);font-weight:700;color:#2B2470;letter-spacing:-.03em;line-height:1.05;margin-top:14px}
+    .showcase .sum{font-size:17px;line-height:1.6;color:#4A4A55;margin-top:20px;max-width:46ch}
+    .showcase .meta{display:grid;gap:18px;margin-top:32px}
+    .showcase .meta>div{display:flex;gap:16px;align-items:center}
+    .showcase .meta .ic{width:48px;height:48px;flex:none;border-radius:50%;border:1.5px solid #2B2470;display:grid;place-items:center;color:#2B2470}
+    .showcase .meta .ic svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .showcase .meta b{display:block;font-size:17px;color:#2B2470;font-weight:600}
+    .showcase .meta span{font-size:15px;color:#4A4A55}
+    .collage{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;height:620px;margin-right:calc(-1 * var(--gutter) - 60px)}
+    .collage .col{display:flex;flex-direction:column;gap:22px}
+    .collage .col:nth-child(1){padding-top:110px}
+    .collage .col:nth-child(2){margin-top:-150px}
+    .collage .col:nth-child(3){padding-top:40px}
+    .collage .pf{border:7px solid #111;border-radius:34px;overflow:hidden;background:#111;box-shadow:0 24px 50px -24px rgba(26,31,49,.55);aspect-ratio:393/820;flex:none}
+    .collage .pf img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+    @media (max-width:860px){.showcase .wrap{grid-template-columns:1fr}.collage{height:460px;margin-right:calc(-1 * var(--gutter) - 40px)}}
+    .webs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin-top:48px}
+    .web{margin:0;display:flex;flex-direction:column;gap:12px;min-width:0}
+    .web .win{border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:#111}
+    .web .win img{display:block;width:100%;height:auto}
+    .web .win.tall{max-height:min(70vh,620px);overflow-y:auto;scrollbar-width:thin}
+    .ph-web{display:none}
+    .web figcaption{font-size:14px;color:var(--muted)}
+    .web figcaption b{display:block;color:var(--ink);font-weight:700;font-size:15px;margin-bottom:2px}
+    .roles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:48px}
+    .roles>div{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:22px;min-width:0}
+    .roles span{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+    .roles h3{margin-top:8px}.roles p{font-size:14px;color:var(--muted);margin-top:8px}
+    @media (max-width:860px){.webs,.roles{grid-template-columns:1fr}}
+  </style>
+  <style>
+    .ph-box{margin-top:40px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .ph-box>div{border:2px dashed var(--line);border-radius:var(--r-md);padding:24px;background:var(--surface)}
+    .ph-box .n{font-size:clamp(34px,4vw,48px);font-weight:800;letter-spacing:-.04em;color:var(--accent)}
+    .ph-box p{font-size:14px;color:var(--muted);margin-top:6px}
+    .todo{display:inline-block;font-family:var(--f-mono);font-size:10px;letter-spacing:.1em;padding:3px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin-left:8px;vertical-align:middle}
+    @media (max-width:860px){.ph-box{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="mark" href="index.html" aria-label="Back to portfolio">SK</a>
+  <nav class="pill" aria-label="Case study sections"><a href="index.html#work" class="back">&larr; Portfolio</a><a href="#overview" data-s="overview">Overview</a><a href="#challenge" data-s="challenge">Challenge</a><a href="#home" data-s="home">Race home</a><a href="#engage" data-s="engage">Engagement</a><a href="#journey" data-s="journey">Journey</a><a href="#outcomes" data-s="outcomes">Outcomes</a></nav>
+</header>
+<main id="main">
+  <header class="sk-hero">
+    <div class="wrap">
+      <div>
+        <div class="brandmark"><span>HERE Technologies · Employee engagement · Web</span></div>
+        <h1>Engagement, <em>on the race track.</em></h1>
+        <p class="lede">Designing Empower for HERE Technologies: a gamified engagement platform where employees earn points through quizzes, polls, events and stories, climb a race-style leaderboard and redeem rewards.</p>
+        <div class="hero-meta"><span class="chip">Employee engagement</span><span class="chip">Gamification</span><span class="chip">Manager dashboard</span><span class="chip">Launched</span></div>
+      </div>
+      <div class="fan" aria-label="Three key screens"><figure class="ph"><div class="scr"><img src="img/empower/leader.webp" alt="Leaderboard"></div></figure><figure class="ph"><div class="scr"><img src="img/empower/journey.webp" alt="My journey"></div></figure><figure class="ph"><div class="scr"><img src="img/empower/redeem.webp" alt="Rewards"></div></figure></div>
+    </div>
+  </header>
+  
+  <section class="showcase" aria-label="Project summary">
+    <div class="rings" aria-hidden="true"></div><div class="arc" aria-hidden="true"></div><span class="num" aria-hidden="true">08</span>
+    <div class="wrap">
+      <div>
+        <div class="kicker">Project 08 · Enterprise · HERE Technologies</div>
+        <h2>Empower engagement platform</h2>
+        <p class="sum">A race-themed platform that turns everyday participation (learning, quizzes, polls, recognition) into laps, points and rewards that employees actually want to earn.</p>
+        <div class="meta"><div><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg></span><div><b>My role</b><span>Design lead: research to visual design</span></div></div><div><span class="ic"><svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span><div><b>Platform</b><span>Responsive web for HERE employees</span></div></div><div><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span><div><b>Scope</b><span>Employees and managers</span></div></div></div>
+      </div>
+      <div class="collage" aria-hidden="true"><div class="col"><div class="pf"><img src="img/empower/leader.webp" alt=""></div></div><div class="col"><div class="pf"><img src="img/empower/quiz.webp" alt=""></div><div class="pf"><img src="img/empower/polls.webp" alt=""></div></div><div class="col"><div class="pf"><img src="img/empower/journey.webp" alt=""></div><div class="pf"><img src="img/empower/redeem.webp" alt=""></div></div></div>
+    </div>
+  </section>
+  <section id="overview">
+    <div class="wrap two">
+      <div class="stack"><div class="eyebrow">Overview</div><h2>Engagement tools <em>nobody opened.</em></h2></div>
+      <div class="stack"><p class="lede">HERE wanted employees to take part in learning, surveys and recognition, but traditional intranet tools felt like chores. Empower turns participation into a game with a clear goal: finish the race.</p><p>I led the design from research to visual design: the race metaphor, the home feed, quizzes, polls, events, stories, the personal journey, rewards and a manager dashboard.</p></div>
+    </div>
+    <div class="wrap">
+      <div class="roles"><div><span>Employees</span><h3>Take part</h3><p>Quizzes, polls, events, stories and trainings.</p></div><div><span>Teams</span><h3>Compete</h3><p>Team, department and location leaderboards.</p></div><div><span>Managers</span><h3>See engagement</h3><p>KPIs, badges and a happiness chart.</p></div><div><span>HR</span><h3>Reward</h3><p>Coins, badges and a rewards store.</p></div></div>
+      <dl class="snap"><div><dt>My role</dt><dd>Design lead</dd></div><div><dt>Client</dt><dd>HERE Technologies</dd></div><div><dt>Users</dt><dd>Employees &amp; managers</dd></div><div><dt>Theme</dt><dd>Formula-style racing</dd></div><div><dt>Status</dt><dd>Launched</dd></div></dl>
+    </div>
+  </section>
+  <section id="challenge" class="alt">
+    <div class="wrap two">
+      <div class="stack"><div class="eyebrow">The challenge</div><h2>Make participation <em>feel like play.</em></h2><p class="lede">Engagement only works if people come back. The platform needed a reason to return every week, without feeling childish in a global tech company.</p></div>
+      <div class="pains"><div class="pain"><span class="k">A</span><div><h3>Scattered activities</h3><p>Quizzes, surveys, events and trainings lived in separate tools.</p></div></div><div class="pain"><span class="k">B</span><div><h3>No visible progress</h3><p>Taking part earned nothing anyone could see.</p></div></div><div class="pain"><span class="k">C</span><div><h3>Recognition was private</h3><p>Wins and appreciation rarely reached the wider team.</p></div></div><div class="pain"><span class="k">D</span><div><h3>Managers flew blind</h3><p>No simple view of team engagement or mood.</p></div></div></div>
+    </div>
+  </section>
+  <section id="principles" class="band">
+    <div class="wrap">
+      <div class="eyebrow">Research</div>
+      <h2 style="margin-top:16px;max-width:22ch">Why a <em>race?</em></h2>
+      <p class="lede" style="margin-top:16px;color:color-mix(in srgb,var(--on-ink) 70%,transparent)">Research looked at motorsport broadcasts, power rankings and gamified products to find a metaphor that is competitive, team-based and familiar to a global workforce.</p>
+      <div class="principles"><div><h3>Laps, not levels</h3><p>Progress shown as laps and points around a circuit everyone understands.</p></div><div><h3>Team over individual</h3><p>Leaderboards by team, department and location, not just people.</p></div><div><h3>Every action counts</h3><p>Quizzes, polls, events and stories all earn coins.</p></div><div><h3>Rewards worth wanting</h3><p>A store of racing gear and vouchers to spend coins on.</p></div></div>
+      <div class="ph-box"><div><div class="n">[__]</div><p>employees surveyed <span class="todo">PLACEHOLDER</span></p></div><div><div class="n">[__]</div><p>interviews with employees and managers <span class="todo">PLACEHOLDER</span></p></div><div><div class="n">[__]</div><p>key insights that shaped the design <span class="todo">PLACEHOLDER</span></p></div></div>
+    </div>
+  </section>
+  <section id="home">
+    <div class="wrap">
+      <div class="chapter-head"><span class="chapter-num" aria-hidden="true">01</span>
+        <div class="stack"><div class="eyebrow">Race home</div><h2>A home page that <em>feels like race day</em></h2>
+        <p class="lede">Home shows your lap, points and next actions, a feed of team wins, the weekly progress chart and trainings. The leaderboard ranks drivers by points with team colours.</p></div></div>
+      <div class="webs"><figure class="web"><div class="win tall" tabindex="0"><img src="img/empower/home.webp" alt="Empower home feed" loading="lazy"></div><figcaption><b>Home</b>Lap progress, feed, quizzes, polls, winners and trainings.</figcaption></figure><figure class="web"><div class="win" ><img src="img/empower/leader.webp" alt="Leaderboard" loading="lazy"></div><figcaption><b>Leaderboard</b>Ranked by points, filterable by team, department and location.</figcaption></figure></div><div class="decisions"><div><span class="tag">Decision</span><h3>Lap progress up top</h3><p>Your lap and points are the first thing you see, every visit.</p></div><div><span class="tag">Decision</span><h3>Wins in the feed</h3><p>Winners and appreciation are celebrated publicly.</p></div><div><span class="tag">Decision</span><h3>Leaderboards by team</h3><p>Team rankings keep competition friendly.</p></div></div>
+    </div>
+  </section>
+  <section id="engage" class="alt">
+    <div class="wrap">
+      <div class="chapter-head"><span class="chapter-num" aria-hidden="true">02</span>
+        <div class="stack"><div class="eyebrow">Engagement</div><h2>Quizzes, polls, events <em>and stories</em></h2>
+        <p class="lede">Every activity has its own space, but they share one card pattern: what it is, when it ends, and one clear action.</p></div></div>
+      <div class="webs"><figure class="web"><div class="win" ><img src="img/empower/quiz.webp" alt="Quiz list" loading="lazy"></div><figcaption><b>Quizzes</b>Start now or view results.</figcaption></figure><figure class="web"><div class="win" ><img src="img/empower/polls.webp" alt="Polls" loading="lazy"></div><figcaption><b>Polls</b>Live results after you vote.</figcaption></figure><figure class="web"><div class="win tall" tabindex="0"><img src="img/empower/events.webp" alt="Events" loading="lazy"></div><figcaption><b>Events</b>Upcoming and past events.</figcaption></figure><figure class="web"><div class="win" ><img src="img/empower/final.webp" alt="Create a story" loading="lazy"></div><figcaption><b>Stories</b>Photo, video or text stories.</figcaption></figure></div><div class="decisions"><div><span class="tag">Decision</span><h3>One card pattern</h3><p>Learn it once, use it everywhere.</p></div><div><span class="tag">Decision</span><h3>Results after voting</h3><p>Seeing live results is the reward for taking part.</p></div><div><span class="tag">Decision</span><h3>Stories by employees</h3><p>Photo, video and text stories let people share wins in their own way.</p></div></div>
+    </div>
+  </section>
+  <section id="journey">
+    <div class="wrap">
+      <div class="chapter-head"><span class="chapter-num" aria-hidden="true">03</span>
+        <div class="stack"><div class="eyebrow">My journey &amp; rewards</div><h2>Your car, your stats, <em>your rewards</em></h2>
+        <p class="lede">My Journey shows your car, rank, team and KPIs. Coins can be spent in a rewards store, and managers get a dashboard of team engagement.</p></div></div>
+      <div class="webs"><figure class="web"><div class="win tall" tabindex="0"><img src="img/empower/journey.webp" alt="My journey" loading="lazy"></div><figcaption><b>My journey</b>Your car, rank and KPIs: trainings, work, timesheets.</figcaption></figure><figure class="web"><div class="win tall" tabindex="0"><img src="img/empower/redeem.webp" alt="Rewards store" loading="lazy"></div><figcaption><b>Rewards</b>Spend coins on racing gear and vouchers.</figcaption></figure><figure class="web"><div class="win" ><img src="img/empower/manager.webp" alt="Manager dashboard" loading="lazy"></div><figcaption><b>Manager dashboard</b>Users, points, badges and a happiness chart.</figcaption></figure></div><div class="decisions"><div><span class="tag">Decision</span><h3>Your car levels up</h3><p>The car upgrades as you progress, a visible reward for participation.</p></div><div><span class="tag">Decision</span><h3>Coins with a purpose</h3><p>A real store gives points meaning outside the platform.</p></div><div><span class="tag">Decision</span><h3>Mood for managers</h3><p>A happiness chart turns engagement into a conversation.</p></div></div>
+    </div>
+  </section>
+
+  <section id="outcomes">
+    <div class="wrap two">
+      <div class="stack">
+        <div class="eyebrow">Outcomes</div>
+        <h2>What <em>shipped</em></h2>
+        <p class="lede">Empower launched across HERE as one place for learning, feedback, recognition and rewards.</p>
+        <div class="outcomes" style="grid-template-columns:1fr 1fr"><div><div class="n">[__]%</div><p>employee satisfaction <span class="todo">PLACEHOLDER</span></p></div><div><div class="n">5</div><p>activity types: quizzes, polls, events, stories, trainings</p></div><div><div class="n">3</div><p>leaderboard views: team, department, location</p></div><div><div class="n">1</div><p>rewards store connected to points</p></div></div>
+      </div>
+      <div class="stack"><div class="eyebrow">What I learned</div><div class="learn"><p><b>A strong metaphor does half the work.</b> The race theme explained progress, rank and rewards without a tutorial.</p><p><b>Celebrate in public.</b> Visible wins drove more participation than private points.</p><p><b>Give managers a reason to care.</b> The dashboard turned engagement data into team conversations.</p></div></div>
+    </div>
+  </section>
+</main>
+<footer class="end">
+  <div class="wrap">
+    <div class="eyebrow">Thank you</div>
+    <h2 style="margin-top:20px">See you at <em>the finish line.</em></h2>
+    <p>Thanks to the HERE Technologies team.</p>
+    <div class="credits"><span>Design lead · Subhash Kapoor</span><span>Client · HERE Technologies</span></div>
+    <div class="back-row"><a class="btn dark" href="index.html#work"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 8H3M7 4L3 8l4 4"/></svg>Back to portfolio</a><a class="btn" href="index.html#contact">Get in touch</a></div>
+  </div>
+</footer>
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.pill a[data-s]'));
+  var map={};links.forEach(function(a){map[a.dataset.s]=a});
+  var ids=['overview', 'challenge', 'home', 'engage', 'journey', 'outcomes', 'principles'];
+  var group={principles:'challenge'};
+  if(!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;
+    var k=group[e.target.id]||e.target.id;links.forEach(function(a){a.classList.toggle('on',a===map[k])});
+    var on=map[k];if(on&&matchMedia('(max-width:720px)').matches){var p=on.parentNode;p.scrollLeft=on.offsetLeft-16}
+  })},{rootMargin:'-45% 0px -50% 0px'});
+  ids.forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)});
+})();
+</script>
+</body>
+</html>
