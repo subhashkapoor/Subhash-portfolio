@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="Case study: a pickleball tournament platform, from a public website and admin console to a companion fan app. Discovery, live scores, brackets and fan engagement.">
+  <style>html{color-scheme:light}body{margin:0}img{max-width:100%}</style>
+  <title>Pickleball Platform Case Study · Subhash Kapoor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="sukoon.css">
+  <style>
+    .fan::before{content:"PLAY"}
+    /* Showcase intro (project-title style) */
+    .showcase{position:relative;overflow:hidden;background:#F7F6F3;color:#1A1F31;padding-block:clamp(64px,8vw,104px) clamp(120px,12vw,170px)}
+    .showcase .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px;align-items:center;position:relative;z-index:1}
+    .showcase .rings{position:absolute;left:38%;top:50%;width:900px;height:900px;transform:translate(-50%,-50%);border-radius:50%;
+      background:repeating-radial-gradient(circle,transparent 0 70px,rgba(26,31,49,.045) 70px 118px);pointer-events:none}
+    .showcase .arc{position:absolute;left:-110px;bottom:-150px;width:250px;height:250px;border-radius:50%;background:#1F6FE5;box-shadow:0 0 0 34px #2EB872;pointer-events:none}
+    .showcase .num{position:absolute;left:22px;bottom:12px;font-size:48px;font-weight:300;color:rgba(255,255,255,.28);letter-spacing:-.02em;z-index:1}
+    .showcase .kicker{font-family:var(--f-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#5B6A86}
+    .showcase h2{font-size:clamp(34px,4.4vw,56px);font-weight:700;color:#1F6FE5;letter-spacing:-.03em;line-height:1.05;margin-top:14px}
+    .showcase .sum{font-size:17px;line-height:1.6;color:#4A4A55;margin-top:20px;max-width:46ch}
+    .showcase .meta{display:grid;gap:18px;margin-top:32px}
+    .showcase .meta>div{display:flex;gap:16px;align-items:center}
+    .showcase .meta .ic{width:48px;height:48px;flex:none;border-radius:50%;border:1.5px solid #1F6FE5;display:grid;place-items:center;color:#1F6FE5}
+    .showcase .meta .ic svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .showcase .meta b{display:block;font-size:17px;color:#1F6FE5;font-weight:600}
+    .showcase .meta span{font-size:15px;color:#4A4A55}
+    .collage{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;height:620px;margin-right:calc(-1 * var(--gutter) - 60px)}
+    .collage .col{display:flex;flex-direction:column;gap:22px}
+    .collage .col:nth-child(1){padding-top:110px}
+    .collage .col:nth-child(2){margin-top:-150px}
+    .collage .col:nth-child(3){padding-top:40px}
+    .collage .pf{border:7px solid #111;border-radius:34px;overflow:hidden;background:#111;box-shadow:0 24px 50px -24px rgba(26,31,49,.55);aspect-ratio:393/820;flex:none}
+    .collage .pf img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+    @media (max-width:860px){.showcase .wrap{grid-template-columns:1fr}.collage{height:460px;margin-right:calc(-1 * var(--gutter) - 40px)}}
+    .webs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin-top:48px}
+    .web{margin:0;display:flex;flex-direction:column;gap:12px;min-width:0}
+    .web .win{border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:#111}
+    .web .win img{display:block;width:100%;height:auto}
+    .web figcaption{font-size:14px;color:var(--muted)}
+    .web figcaption b{display:block;color:var(--ink);font-weight:700;font-size:15px;margin-bottom:2px}
+    .roles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:48px}
+    .roles>div{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:22px;min-width:0}
+    .roles span{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+    .roles h3{margin-top:8px}.roles p{font-size:14px;color:var(--muted);margin-top:8px}
+    @media (max-width:860px){.webs,.roles{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="mark" href="index.html" aria-label="Back to portfolio">SK</a>
+  <nav class="pill" aria-label="Case study sections">
+    <a href="index.html#work" class="back">&larr; Portfolio</a>
+    <a href="#overview" data-s="overview">Overview</a>
+    <a href="#challenge" data-s="challenge">Challenge</a>
+    <a href="#web" data-s="web">Website</a>
+    <a href="#admin" data-s="admin">Admin</a>
+    <a href="#app" data-s="app">Fan app</a>
+    <a href="#outcomes" data-s="outcomes">Outcomes</a>
+  </nav>
+</header>
+
+<main id="main">
+  <header class="sk-hero">
+    <div class="wrap">
+      <div>
+        <div class="brandmark"><span>Sports tech · United States · Web, admin &amp; mobile</span></div>
+        <h1>Every rally, <em>one platform.</em></h1>
+        <p class="lede">Designing a pickleball tournament platform end to end: a public website where players find events and follow brackets, an admin console for organisers and referees, and a companion app that turns spectators into fans.</p>
+        <div class="hero-meta">
+          <span class="chip">3 connected products</span><span class="chip">4 user roles</span><span class="chip">Live scores &amp; brackets</span><span class="chip">Launched</span>
+        </div>
+      </div>
+      <div class="fan" aria-label="Three key screens">
+        <figure class="ph"><div class="scr"><img src="img/pickleball/m-home.webp" alt="App home with nearby events"></div></figure>
+        <figure class="ph"><div class="scr"><img src="img/pickleball/m-live.webp" alt="Live match score"></div></figure>
+        <figure class="ph"><div class="scr"><img src="img/pickleball/m-podium.webp" alt="League leaderboard and podium"></div></figure>
+      </div>
+    </div>
+  </header>
+
+  <!-- SHOWCASE -->
+  <section class="showcase" aria-label="Project summary">
+    <div class="rings" aria-hidden="true"></div><div class="arc" aria-hidden="true"></div><span class="num" aria-hidden="true">05</span>
+    <div class="wrap">
+      <div>
+        <div class="kicker">Project 05 · Sports tech · USA</div>
+        <h2>Pickleball tournament platform</h2>
+        <p class="sum">One platform for the whole tournament: players register and follow their draw, organisers and referees run the day, and fans keep score, back their team and climb the leaderboard.</p>
+        <div class="meta">
+          <div><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg></span><div><b>My role</b><span>Design manager: direction, reviews and delivery</span></div></div>
+          <div><span class="ic"><svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span><div><b>Platforms</b><span>Responsive web · admin console · iOS &amp; Android</span></div></div>
+          <div><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span><div><b>Scope</b><span>Players, organisers, referees and fans</span></div></div>
+        </div>
+      </div>
+      <div class="collage" aria-hidden="true">
+        <div class="col"><div class="pf"><img src="img/pickleball/m-tourn.webp" alt=""></div></div>
+        <div class="col"><div class="pf"><img src="img/pickleball/m-league.webp" alt=""></div><div class="pf"><img src="img/pickleball/m-matches.webp" alt=""></div></div>
+        <div class="col"><div class="pf"><img src="img/pickleball/m-live.webp" alt=""></div><div class="pf"><img src="img/pickleball/m-team.webp" alt=""></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section id="overview">
+    <div class="wrap two">
+      <div class="stack">
+        <div class="eyebrow">Overview</div>
+        <h2>The fastest-growing sport, <em>run on spreadsheets.</em></h2>
+      </div>
+      <div class="stack">
+        <p class="lede">Pickleball tournaments were growing fast, but the experience around them hadn't kept up. Players hunted for events across sites, organisers juggled draws and scores by hand, and spectators had no reason to stay engaged between matches.</p>
+        <p>I led the design team that built the platform as three connected products sharing one data model: tournaments, players, matches and scores. My job was setting the direction, running reviews and keeping web, admin and mobile consistent as each one shipped.</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="roles">
+        <div><span>Players</span><h3>Find, enter, follow</h3><p>Discover events, register, and follow standings and brackets.</p></div>
+        <div><span>Organisers</span><h3>Run the tournament</h3><p>Set up events, groups and knockouts, and manage entries.</p></div>
+        <div><span>Referees</span><h3>Score the match</h3><p>Assigned matches and live score entry that updates everywhere.</p></div>
+        <div><span>Fans</span><h3>Stay in the game</h3><p>Live scores, team picks, points and leaderboards in the app.</p></div>
+      </div>
+      <dl class="snap">
+        <div><dt>My role</dt><dd>Design manager</dd></div>
+        <div><dt>Client</dt><dd>Tournament platform, USA</dd></div>
+        <div><dt>Products</dt><dd>Website, admin, fan app</dd></div>
+        <div><dt>Themes</dt><dd>Dark &amp; light</dd></div>
+        <div><dt>Status</dt><dd>Launched</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- CHALLENGE -->
+  <section id="challenge" class="alt">
+    <div class="wrap two">
+      <div class="stack">
+        <div class="eyebrow">The challenge</div>
+        <h2>One tournament, <em>four very different</em> users.</h2>
+        <p class="lede">The same match means different things to each person: a result to a player, a task to a referee, a schedule to an organiser and a story to a fan. The platform had to serve all four from one source of truth.</p>
+      </div>
+      <div class="pains">
+        <div class="pain"><span class="k">A</span><div><h3>Events were hard to find</h3><p>Upcoming, ongoing and completed tournaments were scattered, with no clear way to register or follow one.</p></div></div>
+        <div class="pain"><span class="k">B</span><div><h3>Draws were opaque</h3><p>Players couldn't easily see their group, next match or where they stood in a knockout.</p></div></div>
+        <div class="pain"><span class="k">C</span><div><h3>Running the day was manual</h3><p>Organisers built brackets by hand and chased referees for scores.</p></div></div>
+        <div class="pain"><span class="k">D</span><div><h3>Fans had nothing to do</h3><p>Spectators watched one match, then left. There was no reason to come back.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="principles" class="band">
+    <div class="wrap">
+      <div class="eyebrow">Research &amp; principles</div>
+      <h2 style="margin-top:16px;max-width:22ch">Borrowed from the best of <em>sports media</em></h2>
+      <p class="lede" style="margin-top:16px;color:color-mix(in srgb,var(--on-ink) 70%,transparent)">The team studied football, rugby and basketball apps and player-stat sites, then mapped every user flow for guests and signed-in users, before and after a match.</p>
+      <div class="principles">
+        <div><h3>The match is the hero</h3><p>Big scores, clear opponents and one obvious next action on every match card.</p></div>
+        <div><h3>One state, every screen</h3><p>Not started, live or completed: the same match shows the same state on web, admin and app.</p></div>
+        <div><h3>Dark by default</h3><p>A broadcast-style dark theme that makes photos and scores pop, with a light admin for long working sessions.</p></div>
+        <div><h3>Give fans a role</h3><p>Picks, points and leaderboards turn watching into playing along.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WEB -->
+  <section id="web">
+    <div class="wrap">
+      <div class="chapter-head"><span class="chapter-num" aria-hidden="true">01</span>
+        <div class="stack"><div class="eyebrow">Player website</div><h2>From finding an event to <em>following the final</em></h2>
+        <p class="lede">The website lets anyone browse ongoing and upcoming tournaments. Each tournament page grows with the event: overview and registration first, then participants, group standings, a live knockout bracket and the order of play.</p></div></div>
+      <div class="webs">
+        <figure class="web"><div class="win"><img src="img/pickleball/web-detail.webp" alt="Tournament overview with details, contact, venue and sponsors" loading="lazy"></div><figcaption><b>Tournament overview</b>Dates, venue, fee, format and rules, with one orange Register button.</figcaption></figure>
+        <figure class="web"><div class="win"><img src="img/pickleball/web-bracket.webp" alt="Knockout bracket from quarter final to final" loading="lazy"></div><figcaption><b>Knockout bracket</b>Quarter final to final, winners highlighted, courts and times on every match.</figcaption></figure>
+        <figure class="web"><div class="win"><img src="img/pickleball/web-groups.webp" alt="Group stage results with sets and points" loading="lazy"></div><figcaption><b>Group stage</b>Every group, every set, with the winner of each tie marked.</figcaption></figure>
+        <figure class="web"><div class="win"><img src="img/pickleball/web-players.webp" alt="Participants list with rankings and categories" loading="lazy"></div><figcaption><b>Participants</b>Seeded players with ranking, country and category.</figcaption></figure>
+      </div>
+      <div class="decisions">
+        <div><span class="tag">Decision</span><h3>Tabs that follow the event</h3><p>Overview, participants, standings, fixtures and order of play: the same tabs before, during and after, so people always know where to look.</p></div>
+        <div><span class="tag">Decision</span><h3>Guest and signed-in paths</h3><p>Guests can browse everything; signing in adds registration and highlights your own matches in every table.</p></div>
+        <div><span class="tag">Decision</span><h3>Designed for match states</h3><p>Flows were mapped for matches not started and completed, so empty brackets and final results both look intentional.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADMIN -->
+  <section id="admin" class="alt">
+    <div class="wrap">
+      <div class="chapter-head"><span class="chapter-num" aria-hidden="true">02</span>
+        <div class="stack"><div class="eyebrow">Admin &amp; referee console</div><h2>Run the whole day <em>from one screen</em></h2>
+        <p class="lede">Organisers create tournaments, generate groups and knockouts, assign referees and publish the schedule. Referees see only their matches and enter scores that update the website and app instantly.</p></div></div>
+      <div class="webs">
+        <figure class="web"><div class="win"><img src="img/pickleball/admin-groups.webp" alt="Admin view of groups with match results" loading="lazy"></div><figcaption><b>Groups</b>Edit any group and its results, with winners flagged automatically.</figcaption></figure>
+        <figure class="web"><div class="win"><img src="img/pickleball/admin-bracket.webp" alt="Admin knockout bracket with editable matches" loading="lazy"></div><figcaption><b>Knockout</b>Every match editable in place: players, court, time and score.</figcaption></figure>
+      </div>
+      <div class="decisions">
+        <div><span class="tag">Decision</span><h3>A light theme for work</h3><p>The admin uses a calm light theme with a fixed sidebar, built for hours of data entry rather than browsing.</p></div>
+        <div><span class="tag">Decision</span><h3>Assign from either side</h3><p>Organisers can assign a referee from the tournament, or a tournament from the referee: whichever they're looking at.</p></div>
+        <div><span class="tag">Decision</span><h3>Same components, new context</h3><p>Brackets and group tables reuse the player-facing components, so what admins edit is exactly what players see.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APP -->
+  <section id="app">
+    <div class="wrap">
+      <div class="chapter-head"><span class="chapter-num" aria-hidden="true">03</span>
+        <div class="stack"><div class="eyebrow">Fan app</div><h2>Turning spectators <em>into players</em></h2>
+        <p class="lede">The companion app answers "what's happening near me?" and gives fans something to do: follow live scores, build a team from real players, earn points and climb a league leaderboard.</p></div></div>
+      <div class="rail-wrap rail" tabindex="0" aria-label="Fan app screens">
+        <figure class="ph"><div class="scr"><img src="img/pickleball/m-home.webp" alt="Home with nearby events" loading="lazy"></div><figcaption><b>Nearby events</b>"25 events happening in your area", sorted by date.</figcaption></figure>
+        <figure class="ph"><div class="scr"><img src="img/pickleball/m-tourn.webp" alt="Tournament list" loading="lazy"></div><figcaption><b>Tournaments</b>Big photo cards with a countdown to the first serve.</figcaption></figure>
+        <figure class="ph"><div class="scr"><img src="img/pickleball/m-league.webp" alt="League teams" loading="lazy"></div><figcaption><b>League teams</b>Teams and their players, one tap to expand.</figcaption></figure>
+        <figure class="ph"><div class="scr"><img src="img/pickleball/m-matches.webp" alt="Live matches with scores" loading="lazy"></div><figcaption><b>Matches</b>Live scores, round by round.</figcaption></figure>
+        <figure class="ph"><div class="scr"><img src="img/pickleball/m-live.webp" alt="Live match court view" loading="lazy"></div><figcaption><b>Live match</b>A court view with set, game and points for each side.</figcaption></figure>
+        <figure class="ph"><div class="scr"><img src="img/pickleball/m-podium.webp" alt="Leaderboard podium" loading="lazy"></div><figcaption><b>Leaderboard</b>A podium for the top three, with movement arrows below.</figcaption></figure>
+        <figure class="ph"><div class="scr"><img src="img/pickleball/m-team.webp" alt="Choose players to create your team" loading="lazy"></div><figcaption><b>Build your team</b>Pick real players by playing ability, then publish your team.</figcaption></figure>
+      </div>
+      <div class="decisions">
+        <div><span class="tag">Decision</span><h3>Location first</h3><p>Home opens with events near you, because most fans watch where they live.</p></div>
+        <div><span class="tag">Decision</span><h3>Points everywhere</h3><p>A coin balance in the header and points on every leaderboard make engagement visible.</p></div>
+        <div><span class="tag">Decision</span><h3>Fantasy, kept simple</h3><p>Building a team is one list with a plus button per player, not a draft room.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTCOMES -->
+  <section id="outcomes" class="alt">
+    <div class="wrap two">
+      <div class="stack">
+        <div class="eyebrow">Outcomes</div>
+        <h2>What <em>shipped</em></h2>
+        <p class="lede">The platform launched with all three products working from one data model, so a score entered by a referee appears on the website and in the app at the same moment.</p>
+        <div class="outcomes" style="grid-template-columns:1fr 1fr">
+          <div><div class="n">3</div><p>connected products: website, admin console, fan app</p></div>
+          <div><div class="n">4</div><p>user roles served from one source of truth</p></div>
+          <div><div class="n">2</div><p>themes: a dark broadcast look and a light admin</p></div>
+          <div><div class="n">1</div><p>shared component set across web and mobile</p></div>
+        </div>
+      </div>
+      <div class="stack">
+        <div class="eyebrow">What I learned</div>
+        <div class="learn">
+          <p><b>Design the data before the screens.</b> Agreeing on what a tournament, match and score are, and their states, let three products evolve without contradicting each other.</p>
+          <p><b>Map every state.</b> Guest or signed in, match not started or completed: drawing each path up front removed most of the late-stage surprises.</p>
+          <p><b>Give people a reason to return.</b> Scores inform; points, picks and leaderboards are what bring fans back on the next match day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="end">
+  <div class="wrap">
+    <div class="eyebrow">Thank you</div>
+    <h2 style="margin-top:20px">See you <em>at the kitchen line.</em></h2>
+    <p>Thanks to the client team and the designers I worked with on this platform.</p>
+    <div class="credits"><span>Design manager · Subhash Kapoor</span><span>Client name withheld · brand marks removed</span></div>
+    <div class="back-row"><a class="btn dark" href="index.html#work"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 8H3M7 4L3 8l4 4"/></svg>Back to portfolio</a><a class="btn" href="index.html#contact">Get in touch</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.pill a[data-s]'));
+  var map={};links.forEach(function(a){map[a.dataset.s]=a});
+  var ids=['overview','challenge','principles','web','admin','app','outcomes'];
+  var group={principles:'challenge'};
+  if(!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;
+    var k=group[e.target.id]||e.target.id;links.forEach(function(a){a.classList.toggle('on',a===map[k])});
+    var on=map[k];if(on&&matchMedia('(max-width:720px)').matches){var p=on.parentNode;p.scrollLeft=on.offsetLeft-16}
+  })},{rootMargin:'-45% 0px -50% 0px'});
+  ids.forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)});
+})();
+</script>
+</body>
+</html>
