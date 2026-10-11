@@ -113,7 +113,7 @@
     ['Ia', 'Information Architecture', 'craft', 'Senior IA on the FedEx customs clearance system: structure that cut task time for 80% of users.'],
     ['Vd', 'Visual Delivery', 'craft', 'Taking work through to polished final visuals and implementation support.'],
     ['Tm', 'Team Building', 'lead', 'Scaled a design practice from 2 to 40+ designers at Quovantis.'],
-    ['Mt', 'Mentorship', 'lead', 'Mentored 10+ designers from junior to mid-level at AlphaSense, and more at Sapient.'],
+    ['Mt', 'Mentorship', 'lead', 'Mentored 10+ designers from junior to mid-level at AlphaSense, and many more since.'],
     ['St', 'Strategic Thinking', 'lead', 'UX strategy roadmaps aligned with business goals and measurable success metrics.'],
     ['Cr', 'Design Critique', 'lead', 'Facilitating critique that raises the quality bar without slowing the team down.'],
     ['Tc', 'Team Collaboration', 'lead', 'Close work with founders, PMs, engineers and brokers to ship validated solutions.'],
